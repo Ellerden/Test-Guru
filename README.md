@@ -1,24 +1,11 @@
-# README
+# TEST GURU
+Генератор тестов создан как учебный проект для онлайн-школы <a href="http://www.thinknetica.com/">Thinknetica</a> <br />
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Список сущностей: <br />
+- <b>Тест</b> <br />
+	- Вопрос <br />
+	- Ответы (один из них должен быть правильным) <br />
+	- Результаты <br />
+- <b>Пользователи</b> <br />
+    - Администратор (публикуют и изменяют тесты) <br />
+    - Обычный пользователь (проходит тесты, делится результатом) <br />
