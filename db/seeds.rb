@@ -35,15 +35,16 @@ answers = Answer.create!([{ text: 'Да', correct: true, question_id: questions[
                             correct: true, question_id: questions[3].id },
                           { text: '! ничего не говорит о работе методов', question_id: questions[3].id }])
 
-users = User.create!([{ name: 'Иван', login: 'ivan1', password: '123456' ,
+users = User.create!([{ name: 'Иван', username: 'ivan1', password: '123456' ,
                         email: 'ivan@ivan.ru', role: 'user' },
-                      { name: 'Петр', login: 'petr1', password: 'qwerty',
+                      { name: 'Петр', username: 'petr1', password: 'qwerty',
                         email: 'petr@petya.com', role: 'admin' },
-                      { name: 'Иван Петров', login: 'ivpet', password: '123qwe',
+                      { name: 'Иван Петров', username: 'ivpet', password: '123qwe',
                         email: 'petrushka@mail.com', role: 'user' }])
-Participation.create!([{ user_id: users[0], test_id: tests[0].id },
+
+Participation.create!([{ user_id: users[0].id, test_id: tests[0].id },
                      { user_id: users[0].id, test_id: tests[1].id },
-                     { user_id: users[1], test_id: tests[1].id },
-                     { user_id: users[2], test_id: tests[0].id },
-                     { user_id: users[2], test_id: tests[1].id },
-                     { user_id: users[2], test_id: tests[2].id }])
+                     { user_id: users[1].id, test_id: tests[1].id },
+                     { user_id: users[2].id, test_id: tests[0].id },
+                     { user_id: users[2].id, test_id: tests[1].id },
+                     { user_id: users[2].id, test_id: tests[2].id }])
