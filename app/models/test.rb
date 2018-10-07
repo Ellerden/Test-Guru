@@ -2,7 +2,6 @@ class Test < ApplicationRecord
   has_many :users, through: :participations
   has_many :questions
   belongs_to :category
-#????
   belongs_to :author, class_name: 'User'
 
   def self.by_category(category)
