@@ -9,15 +9,13 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :by_category, ->(category) { joins(:category)
-                                     .where(categories: { title: category })
-                                     .order(title: :desc).pluck(:title) }
+  scope :by_category, ->(category) {
+                        joins(:category)
+                          .where(categories: { title: category })
+                          .order(title: :desc).pluck(:title)
+                      }
   validates :title, :level, :category, :author, presence: true
   validates :level, numericality: { only_integer: true,
                                     greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }, on: :create
-
-#  def self.by_category(_category)
-  #  Test.joins(:category).order(title: :desc).pluck(:title)
-#  end
 end
