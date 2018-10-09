@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddParticipationTestUserNullConstraint < ActiveRecord::Migration[5.2]
   def change
     change_column_null(:participations, :user_id, false)
