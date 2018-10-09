@@ -19,35 +19,35 @@ users = User.create!([{ name: 'Иван', username: 'ivan1', password: '123456' 
                       { name: 'Иван Петров', username: 'ivpet', password: '123qwe',
                         email: 'petrushka@mail.com', role: 'user' }])
 
-tests = Test.create!([{ title: 'Кто что снял?', level: 2, category_id: categories[4].id,
-                        author_id: users[0].id },
-                      { title: 'Как хорошо вы знаете Ruby?', level: 3, category_id: categories[0].id,
-                        author_id: users[0].id },
-                      { title: 'Есть ли такой динозавр?', level: 1, category_id: categories[3].id,
-                        author_id: users[0].id }])
+tests = Test.create!([{ title: 'Кто что снял?', level: 2, category: categories[4],
+                        author: users[0] },
+                      { title: 'Как хорошо вы знаете Ruby?', level: 3, category: categories[0],
+                        author: users[0] },
+                      { title: 'Есть ли такой динозавр?', level: 1, category: categories[3],
+                        author: users[0] }])
 
-questions = Question.create!([{ text: 'Как насчет стегозавра?', test_id: tests[2].id },
-                              { text: 'Есть ли бронтонетодатозавр?', test_id: tests[2].id },
-                              { text: 'Что такое лямбда?', test_id: tests[1].id },
-                              { text: 'В чем отличие метода с ! от метода без ! ?', test_id: tests[2].id }])
+questions = Question.create!([{ text: 'Как насчет стегозавра?', test: tests[2] },
+                              { text: 'Есть ли бронтонетодатозавр?', test: tests[2] },
+                              { text: 'Что такое лямбда?', test: tests[1] },
+                              { text: 'В чем отличие метода с ! от метода без ! ?', test: tests[2] }])
 
-answers = Answer.create!([{ text: 'Да', correct: true, question_id: questions[0].id },
-                          { text: 'Нет', question_id: questions[0].id },
-                          { text: 'Да', question_id: questions[1].id },
-                          { text: 'Нет', correct: true, question_id: questions[1].id },
-                          { text: 'Элемент класса Proc', correct: true, question_id: questions[2].id },
+answers = Answer.create!([{ text: 'Да', correct: true, question: questions[0] },
+                          { text: 'Нет', question: questions[0] },
+                          { text: 'Да', question: questions[1] },
+                          { text: 'Нет', correct: true, question: questions[1] },
+                          { text: 'Элемент класса Proc', correct: true, question: questions[2] },
                           { text: 'Конструкция, которая используется для работы с замыканиями',
-                            correct: true, question_id: questions[2].id },
-                          { text: 'Один из видов блоков', correct: true, question_id: questions[2].id },
+                            correct: true, question: questions[2] },
+                          { text: 'Один из видов блоков', correct: true, question: questions[2] },
                           { text: 'На методы, которые заканчиваются на ! надо обратить особое внимание',
-                            question_id: questions[3].id },
+                            question: questions[3] },
                           { text: 'Методы c ! выполняют постоянное или потенциально опасное изменение',
-                            correct: true, question_id: questions[3].id },
-                          { text: '! ничего не говорит о работе методов', question_id: questions[3].id }])
+                            correct: true, question: questions[3] },
+                          { text: '! ничего не говорит о работе методов', question: questions[3] }])
 
-Participation.create!([{ user_id: users[0].id, test_id: tests[0].id },
-                     { user_id: users[0].id, test_id: tests[1].id },
-                     { user_id: users[1].id, test_id: tests[1].id },
-                     { user_id: users[2].id, test_id: tests[0].id },
-                     { user_id: users[2].id, test_id: tests[1].id },
-                     { user_id: users[2].id, test_id: tests[2].id }])
+Participation.create!([{ user: users[0], test: tests[0] },
+                       { user: users[0], test: tests[1] },
+                       { user: users[1], test: tests[1] },
+                       { user: users[2], test: tests[0] },
+                       { user: users[2], test: tests[1] },
+                       { user: users[2], test: tests[2] }])
