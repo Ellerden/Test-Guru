@@ -2,13 +2,15 @@
 
 class Answer < ApplicationRecord
   belongs_to :question
-  scope :right, -> { where(correct: true) }
+
+  scope :correct, -> { where(correct: true) }
+
   validates :text, presence: true
-  validate :answers_length
+  validate :answers_length, on: create
 
   def answers_length
-    return if question.answers.length <= 4
+    return if question.answers.count <= 4
 
-    error.add(:answers, 'There should be between 1 to 4 answers')
+    error.add(:answers, 'There should be between 1 and 4 answers')
   end
 end
