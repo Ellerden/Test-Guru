@@ -20,7 +20,9 @@ class Test < ApplicationRecord
                                     greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
 
+
+А почему не использовать тут скоуп by_category?
   def self.by_category_title(category)
-     Test.joins(:category).order(title: :desc).pluck(:title)
+     self.by_category.order(title: :desc).pluck(:title)
   end
 end
