@@ -1,0 +1,16 @@
+<%# Форма для создания/правки вопроса %>
+
+<form action="/questions" method="post">
+  <p>
+    <label for="question-text">Title</label>
+    <input type="text" name="question[text]" id="question-text">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  </p></br>
+
+  <p>
+    <label for="question-test_id">Test:</label>
+    <input type="text" name="question[test_id]" id="question-test_id">
+  </p></br>
+
+  <input type="submit" value="Create">
+</form>
