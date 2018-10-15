@@ -1,31 +1,24 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, except: [:show, :create]
-  before_action :find_question, only: %i[pluck destroy]
+  before_action :find_test, except: [:show, :create, :destroy]
+  before_action :find_question, only: %i[pluck destroy show]
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   # /tests/:test_id/questions/new(.:format)
   def new
-    @question = Question.new(test: @test)
   end
 
   def create
-
-    #result = ["class: #{params.class}, params: #{params.inspect}"]
-   # render plain: result.join("\n")
     @new_question = Question.create(question_params)
     render plain: @new_question.inspect
   end
 
-   #result = ["class: #{params.class}, params: #{params.inspect}"]
-   # render plain: result.join("\n")
-
   def destroy
     @question.destroy
-    redirect_to index
+    render plain: 'Вопрос успешно удален'
   end
 
   # /questions/:id(.:format)
   def show
-    render plain: @question.text
   end
 
   def pluck
@@ -55,5 +48,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:text, :test_id)
+  end
+
+  def rescue_with_question_not_found
+    render plain: 'Вопрос не найден'
   end
 end
