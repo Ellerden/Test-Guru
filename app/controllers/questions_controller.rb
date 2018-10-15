@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, except: [:show, :create, :destroy]
-  before_action :find_question, only: %i[pluck destroy show]
+  before_action :find_question, only: %i[pluck destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   # /tests/:test_id/questions/new(.:format)
@@ -22,8 +22,11 @@ class QuestionsController < ApplicationController
   end
 
   def pluck
-    result = []
-    @question.map { |q| render plain: q.text }
+    if @question.test_id == @test.id
+      render plain: @question.text
+    else
+      render plain: 'Этот вопрос не относится к выбранному тесту'
+    end
   end
 
  # /tests/:test_id/questions
@@ -31,7 +34,7 @@ class QuestionsController < ApplicationController
     questions = @test.questions
     result = []
     questions.each do |quest|
-      result << quest.text
+      result << "#{quest.id} - #{quest.text}"
     end
     render plain: result
   end
