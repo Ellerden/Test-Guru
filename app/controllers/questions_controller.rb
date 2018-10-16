@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:text, @test.id)
+    params.require(:question).permit(:text)
   end
 
   def rescue_with_question_not_found
