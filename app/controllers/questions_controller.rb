@@ -1,17 +1,24 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, except: [:show, :create, :destroy]
-  before_action :find_question, only: %i[pluck destroy]
+  before_action :find_test, only: %i[index pluck new create show]
+  before_action :find_question, only: %i[pluck destroy show]
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   # /tests/:test_id/questions/new(.:format)
   def new
+   @question = @test.questions.build
   end
 
   def create
-    @new_question = Question.create(question_params)
-    render plain: @new_question.inspect
+    @question = @test.questions.build(question_params)
+    if @question.save
+      render plain: @question.inspect
+    else
+      render plain: 'Вопрос создать не удалось'
+    end
   end
 
+  # /questions/:id(.:format)
   def destroy
     @question.destroy
     render plain: 'Вопрос успешно удален'
@@ -19,9 +26,6 @@ class QuestionsController < ApplicationController
 
   # /questions/:id(.:format)
   def show
-  end
-
-  def pluck
     if @question.test_id == @test.id
       render plain: @question.text
     else
@@ -33,9 +37,7 @@ class QuestionsController < ApplicationController
   def index
     questions = @test.questions
     result = []
-    questions.each do |quest|
-      result << "#{quest.id} - #{quest.text}"
-    end
+    questions.map { |quest| result << "#{quest.id} - #{quest.text}" }
     render plain: result
   end
 
@@ -50,7 +52,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:text, :test_id)
+    params.require(:question).permit(:text, @test.id)
   end
 
   def rescue_with_question_not_found

@@ -1,16 +1,12 @@
 <%# Форма для создания вопроса %>
 
-<form action="/questions" method="post">
+<form action="<%= "/tests/#{@question.test.id}/questions" %>", method="post">
   <p>
-    <label for="question-text">Title</label>
+    <label for="question-text">Текст вопроса</label>
     <input type="text" name="question[text]" id="question-text">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-  </p></br>
 
-  <p>
-    <label for="question-test_id">Test</label>
-    <input type="text" name="question[test_id]" id="question-test_id">
   </p></br>
-
-  <input type="submit" value="Create">
+  
+  <input type="submit" value="Добавить к тесту">
 </form>
