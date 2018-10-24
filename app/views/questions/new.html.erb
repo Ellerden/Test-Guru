@@ -1,12 +1,4 @@
 <%# Форма для создания вопроса %>
+<h1>Создать вопрос:</h1>
+<%= render "form" %>
 
-<form action="<%= "/tests/#{@question.test.id}/questions" %>", method="post">
-  <p>
-    <label for="question-text">Текст вопроса</label>
-    <input type="text" name="question[text]" id="question-text">
-    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-
-  </p></br>
-  
-  <input type="submit" value="Добавить к тесту">
-</form>

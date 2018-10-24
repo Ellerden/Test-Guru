@@ -1,18 +1,18 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index pluck new create show]
-  before_action :find_question, only: %i[pluck destroy show]
+  before_action :find_test, only: %i[index new create]
+  before_action :find_question, only: %i[destroy show edit update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   # /tests/:test_id/questions/new(.:format)
   def new
-   @question = @test.questions.build
+    @question = @test.questions.build
   end
 
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      render plain: @question.inspect
+      redirect_to @test
     else
       render plain: 'Вопрос создать не удалось'
     end
@@ -26,19 +26,24 @@ class QuestionsController < ApplicationController
 
   # /questions/:id(.:format)
   def show
-    if @question.test_id == @test.id
-      render plain: @question.text
+  end
+
+ # ТУТ ВОТ ЧТО_ТО НЕ РАБОТАЕТ
+  # /questions/:id(.:format)/edit
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to Test.find(@question.test_id)
     else
-      render plain: 'Этот вопрос не относится к выбранному тесту'
+      render plain: 'Вопрос создать не удалось'
     end
   end
 
  # /tests/:test_id/questions
   def index
-    questions = @test.questions
-    result = []
-    questions.map { |quest| result << "#{quest.id} - #{quest.text}" }
-    render plain: result
+    @questions = @test.questions
   end
 
   private
