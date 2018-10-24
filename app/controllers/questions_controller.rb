@@ -28,11 +28,12 @@ class QuestionsController < ApplicationController
   def show
   end
 
- # ТУТ ВОТ ЧТО_ТО НЕ РАБОТАЕТ
   # /questions/:id(.:format)/edit
   def edit
   end
 
+  # аптейтит только текст вопроса, чтобы апдейтить и привязку к конкретному тесту,
+  # нужно менять пермиты в question_params
   def update
     if @question.update(question_params)
       redirect_to Test.find(@question.test_id)
