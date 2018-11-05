@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestsController < ApplicationController
   before_action :find_test, except: [:index]
 
@@ -5,8 +7,7 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show
-  end
+  def show; end
 
   private
 

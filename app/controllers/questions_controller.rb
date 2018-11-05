@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[new create]
   before_action :find_question, only: %i[destroy show edit update]
@@ -25,12 +27,10 @@ class QuestionsController < ApplicationController
   end
 
   # /questions/:id(.:format)
-  def show
-  end
+  def show; end
 
   # /questions/:id(.:format)/edit
-  def edit
-  end
+  def edit; end
 
   # аптейтит только текст вопроса, чтобы апдейтить и привязку к конкретному тесту,
   # нужно менять пермиты в question_params
