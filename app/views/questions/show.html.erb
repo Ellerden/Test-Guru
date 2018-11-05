@@ -1,0 +1,7 @@
+<%# Удаление вопроса %>
+
+<h1>Текст вопроса: </h1>
+<p><%= @question.text %></p>
+
+<%= link_to 'Удалить', question_path(@question), method: delete %>
+<%= link_to 'Назад', root_path %>
