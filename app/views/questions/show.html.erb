@@ -1,7 +1,9 @@
 <%# Удаление вопроса %>
 
 <h1>Текст вопроса: </h1>
-<p><%= @question.text %></p>
+<p><%= render @question %></p>
 
-<%= link_to 'Удалить', question_path(@question), method: delete %>
-<%= link_to 'Назад', root_path %>
+<%= link_to 'Удалить', question_path(@question), method: :delete %>
+<%= link_to 'Редактировать', edit_question_path(@question) %>
+<%= link_to 'Создать новый вопрос', new_test_question_path(@question.test) %>
+<%= link_to 'К тестам', tests_path %>

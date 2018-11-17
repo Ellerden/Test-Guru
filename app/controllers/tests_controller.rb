@@ -3,8 +3,6 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
-    result = ["#{@tests.inspect}"]
-    render plain: result.join("\n")
   end
 
   def show
