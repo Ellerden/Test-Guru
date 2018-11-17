@@ -1,6 +1,6 @@
 <h1>Вы проходите тест: "<%= @participation.test.title %>"</h1>
 <p>
-  Вопрос <%= @participation.row.id %> из <%= @participation.test.questions.count %> 
+  Вопрос <%= @participation.current_question_counter %> из <%= @participation.test.questions.count %> 
 </p>
 <p><b> <%= @participation.current_question.text %></b></p>
 

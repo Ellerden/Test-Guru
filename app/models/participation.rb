@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Participation < ApplicationRecord
-  attr_accessor :question_counter
 
   belongs_to :user
   belongs_to :test
@@ -22,6 +21,18 @@ class Participation < ApplicationRecord
     save!
   end
 
+  def current_question_counter
+    test.questions.size - questions_left
+  end
+
+  def success?
+    total_result >= 85
+  end
+
+  def total_result
+    ((correct_questions.to_f / test.questions.size) * 100).round
+  end
+
   private
 
   def before_validation_set_first_question
@@ -38,5 +49,10 @@ class Participation < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  # тут подсчитать сколько вопросов осталось их вычесть
+  def questions_left
+    (test.questions.order(:id).where('id > ?', current_question.id)).size
   end
 end

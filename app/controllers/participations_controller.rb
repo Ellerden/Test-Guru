@@ -12,8 +12,6 @@ class ParticipationsController < ApplicationController
   end
 
   def update
-    @participation.question_counter ||= 0
-    @participation.question_counter += 1
     @participation.accept!(params[:answer_ids])
     if @participation.completed?
       redirect_to result_participation_path(@participation)
