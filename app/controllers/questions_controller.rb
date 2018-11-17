@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
   # /questions/:id(.:format)
   def destroy
     @question.destroy
-    render plain: 'Вопрос успешно удален'
+    render :tests
   end
 
   # /questions/:id(.:format)

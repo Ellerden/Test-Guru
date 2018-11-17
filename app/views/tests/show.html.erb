@@ -1,7 +1,6 @@
-<h1>Тест №<%= @test.id %>: <%= @test.title %></h1>
-<p>Категория: <%= @test.category.title %></p>
-<p>Уровень: <%= @test.level %></p>
+<h1> Тест: </h1>
+<%= render @test %>
 <% if @test.questions %>
-  <p>Количество вопросов: <%= @test.questions.count %></p>
+  <h2> Вопросы: </h2>
   <%= render @test.questions %>
 <% end %>

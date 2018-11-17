@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
-
-# добавить в participations current_question
-# добавить в participations counter correct_questions
-
-
 class ParticipationsController < ApplicationController
 
   before_action :set_participation, only: %i[show update result]
 
+  # это не работает! пофиксить
   def show
   end
 
@@ -16,13 +12,20 @@ class ParticipationsController < ApplicationController
   end
 
   def update
-    @participation.accept(params[:answers_ids])
-    render :show
+    @participation.question_counter ||= 0
+    @participation.question_counter += 1
+    @participation.accept!(params[:answer_ids])
+    if @participation.completed?
+      redirect_to result_participation_path(@participation)
+    else
+      render :show
+    end
   end
 
   private
 
   def set_participation
-    @participation = participation.find(params[:id])
+    @participation = Participation.find(params[:id])
+    @test = @participation.test
   end
 end

@@ -1,7 +1,19 @@
-<h1>Тест №<%= @test.id %>: <%= @test.title %></h1>
-<p>Категория: <%= @test.category.title %></p>
-<p>Уровень: <%= @test.level %></p>
-<% if @test.questions %>
-  <p>Количество вопросов: <%= @test.questions.count %></p>
-  <%= render @test.questions %>
+<h1>Вы проходите тест: "<%= @participation.test.title %>"</h1>
+<p>
+  Вопрос <%= @participation.row.id %> из <%= @participation.test.questions.count %> 
+</p>
+<p><b> <%= @participation.current_question.text %></b></p>
+
+<%= form_with url: participation_path(@participation), local: true, method: :put do |f| %>
+  <%= f.collection_check_boxes :answer_ids, @participation.current_question.answers, :id, :text do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}"%>
+      <%= b.label %>
+    </p>
+  <% end %>
+
+  <p>
+  <%= f.submit 'Дальше' %>
+  </p>
 <% end %>
+<%= link_to 'Ко всем тестам', tests_path %>
