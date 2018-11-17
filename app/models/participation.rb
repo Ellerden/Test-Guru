@@ -30,7 +30,7 @@ class Participation < ApplicationRecord
   end
 
   def total_result
-    ((correct_questions.to_f / test.questions.size) * 100).round
+    ((correct_questions.to_f / test.questions.size) * 100)
   end
 
   private
@@ -40,6 +40,8 @@ class Participation < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
+    # т.к. по какой-то причине в answer_ids первый элемент всегда ""
+    answer_ids.shift
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 

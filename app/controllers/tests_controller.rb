@@ -2,7 +2,6 @@
 
 class TestsController < ApplicationController
 
-  # ВОТ ТУТ У МЕНЯ ТОЛЬКО ДАВНО НЕ EXCEPT
   before_action :find_test, only: %i[destroy show update edit start]
   before_action :find_user, only: %i[start]
 

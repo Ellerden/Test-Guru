@@ -7,7 +7,7 @@
 <%= form_with url: participation_path(@participation), local: true, method: :put do |f| %>
   <%= f.collection_check_boxes :answer_ids, @participation.current_question.answers, :id, :text do |b| %>
     <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}"%>
+      <%= b.check_box %>
       <%= b.label %>
     </p>
   <% end %>
