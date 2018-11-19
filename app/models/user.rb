@@ -11,6 +11,6 @@ class User < ApplicationRecord
   end
 
   def participation(test)
-    participations.order(id: :desc).find_by(test_id: test.id)
+    participations.order(id: :desc).find_by(test: test)
   end
 end

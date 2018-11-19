@@ -5,9 +5,9 @@
 <p><b> <%= @participation.current_question.text %></b></p>
 
 <%= form_with url: participation_path(@participation), local: true, method: :put do |f| %>
-  <%= f.collection_check_boxes :answer_ids, @participation.current_question.answers, :id, :text do |b| %>
+  <%= f.collection_check_boxes :answer_ids, @participation.current_question.answers, :id, :text,  include_hidden: false do |b| %>
     <p>
-      <%= b.check_box %>
+      <%= b.check_box%>
       <%= b.label %>
     </p>
   <% end %>
@@ -16,4 +16,4 @@
   <%= f.submit 'Дальше' %>
   </p>
 <% end %>
-<%= link_to 'Ко всем тестам', tests_path %>
+<%= render "linktests" %>

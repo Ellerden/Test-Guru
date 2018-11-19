@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
   # /questions/:id(.:format)
   def destroy
     @question.destroy
-    render :tests
+    render tests_path
   end
 
   # /questions/:id(.:format)

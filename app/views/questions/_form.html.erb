@@ -3,8 +3,6 @@
    <div>
      <%= f.label 'Текст вопроса' %>
      <%= f.text_field :text, placeholder: "Введите текст вопроса" %>
-     <%= f.label 'Вопрос будет добавлен к тесту:' %>
-     <%= f.text_field :test_id, readonly: true %>
    </div>
    <%= f.submit 'Создать вопрос' %>
  <% end %>

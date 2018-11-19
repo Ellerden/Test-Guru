@@ -2,9 +2,9 @@
 
 class ParticipationsController < ApplicationController
 
-  before_action :set_participation, only: %i[show update result]
+  before_action :find_participation, only: %i[show update result]
+  before_action :set_test, only: %i[show update result]
 
-  # это не работает! пофиксить
   def show
   end
 
@@ -22,8 +22,11 @@ class ParticipationsController < ApplicationController
 
   private
 
-  def set_participation
+  def find_participation
     @participation = Participation.find(params[:id])
+  end
+
+  def set_test
     @test = @participation.test
   end
 end

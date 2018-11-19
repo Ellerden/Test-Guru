@@ -1,0 +1,16 @@
+<h1> <%= test_header(@test) %> </h1>
+<%= form_with(model: @test, local: true) do |f| %>
+  <div>
+    <%= f.label 'Название теста' %>
+    <%= f.text_field :title, placeholder: "Введите название теста" %>
+    <p> 
+      <%= f.label 'Уровень' %>
+      <%= f.text_field :level %>
+    </p>
+    <p> 
+      <%= f.label 'Категория' %>
+      <%= f.collection_select(:category_id, Category.all, :id, :title, prompt: true) %>
+    </p>
+  </div>
+   <%= f.submit 'Отправить' %>
+ <% end %>

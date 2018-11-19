@@ -13,16 +13,13 @@ class Participation < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
-
+    self.correct_questions += 1 if correct_answer?(answer_ids)
     self.current_question = next_question
     save!
   end
 
   def current_question_counter
-    test.questions.size - questions_left
+    test.questions.order(:id).where('id <= ?', current_question.id).size
   end
 
   def success?
@@ -30,7 +27,7 @@ class Participation < ApplicationRecord
   end
 
   def total_result
-    ((correct_questions.to_f / test.questions.size) * 100)
+    ((correct_questions.to_f / test.questions.size) * 100).round(2)
   end
 
   private
@@ -40,9 +37,8 @@ class Participation < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    # т.к. по какой-то причине в answer_ids первый элемент всегда ""
-    answer_ids.shift
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    # есль пользователь не выбрал ни один чекбокс - ответ признается как неверный
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort if answer_ids
   end
 
   def correct_answers
@@ -51,10 +47,5 @@ class Participation < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
-  end
-
-  # тут подсчитать сколько вопросов осталось их вычесть
-  def questions_left
-    (test.questions.order(:id).where('id > ?', current_question.id)).size
   end
 end

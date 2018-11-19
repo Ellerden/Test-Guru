@@ -1,6 +1,7 @@
 <h1> Тест: </h1>
 <%= render @test %>
-<% if @test.questions %>
+<% if @test.questions.present? %>
   <h2> Вопросы: </h2>
   <%= render @test.questions %>
 <% end %>
+<p> <%= link_to 'Добавить вопрос', new_test_question_path(@test) %> </p>

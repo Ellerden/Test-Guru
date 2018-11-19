@@ -3,7 +3,8 @@
 class TestsController < ApplicationController
 
   before_action :find_test, only: %i[destroy show update edit start]
-  before_action :find_user, only: %i[start]
+  before_action :set_questions, only: %i[destroy show update edit start]
+  before_action :find_user, only: %i[start new create update]
 
   def index
     @tests = Test.all
@@ -11,10 +12,9 @@ class TestsController < ApplicationController
 
   def show; end
 
-  # пока нет VIEW и ФОРМЫ которые бы позволяли редактировать тест
   def edit; end
 
-  def udpate
+  def update
     if @test.update(test_params)
       redirect_to @test
     else
@@ -22,13 +22,13 @@ class TestsController < ApplicationController
     end
   end
 
- # пока нет VIEW и ФОРМЫ которые бы позволяли создавать новый тест
   def new
-    @test = Test.new
+    @test = @user.created_tests.build
   end
 
+  # по умолчанию добавляю пока все тесты первому юзеру как автору.
   def create
-    @test = Test.new(test_params)
+    @test = @user.created_tests.build(test_params)
     if @test.save
       redirect_to @test
     else
@@ -51,6 +51,9 @@ class TestsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def set_questions
     @questions = @test.questions
   end
 
@@ -60,6 +63,6 @@ class TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 end
