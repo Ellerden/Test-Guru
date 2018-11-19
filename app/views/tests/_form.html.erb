@@ -3,9 +3,9 @@
   <div>
     <%= f.label 'Название теста' %>
     <%= f.text_field :title, placeholder: "Введите название теста" %>
-    <p> 
-      <%= f.label 'Уровень' %>
-      <%= f.text_field :level %>
+    <p>
+      <%= f.label 'Уровень' %> 
+      <%= f.collection_radio_buttons :level, (1..5).map{ |n| [n, n] }, :first, :last %>
     </p>
     <p> 
       <%= f.label 'Категория' %>
