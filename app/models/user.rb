@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def test_passed_by_level(level)
     Test.joins(:participations).where(tests: { level: level })
   end
+
+  def participation(test)
+    participations.order(id: :desc).find_by(test: test)
+  end
 end

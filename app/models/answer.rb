@@ -9,7 +9,7 @@ class Answer < ApplicationRecord
   validate :validate_answers_length, on: create
 
   private
-# Сейчас валидация пропустит создание 5 ответа - - проверить
+
   def validate_answers_length
     return if question.answers.count < 4
 

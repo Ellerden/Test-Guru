@@ -1,0 +1,10 @@
+<% color = @participation.success? ? "success" : "fail" %>
+<h1>Вы завершили тест "<%= @participation.test.title %>"</h1>
+<% if @participation.success? %>
+  <h2>Поздравляем, вы успешно прошли тест! </h2>
+<% else %>
+  <h2>К сожалению, тест не пройден :( </h2>
+<% end %>
+<h2 class="<%= color %>">Ваш результат: <%= @participation.total_result %>%.</h2>
+
+<%= render "linktests" %>

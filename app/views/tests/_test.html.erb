@@ -1,8 +1,8 @@
-<tr>
-<td> <%= test.id %></td>
-<td> <%= test.title %></td>
-<td>Категория: <%= test.category.title %></td>
-<td>Уровень: <%= test.level %></td>
-<td>Кол-во вопросов: <%= test.questions.count %></td>
+<h2><%= test.id %> - <%= test.title %> </h2>
+<p>Категория: <%= test.category.title %></p>
+<p>Уровень: <%= test.level %> </p>
+<p>Кол-во вопросов: <%= test.questions.count %></p>
+<% if test.questions.present? %>
+  <p> <%= button_to 'Пройти тест', start_test_path(test) %> </p>
+<% end %>
 <br>
-</tr>

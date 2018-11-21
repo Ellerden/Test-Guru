@@ -1,0 +1,19 @@
+<h1>Вы проходите тест: "<%= @participation.test.title %>"</h1>
+<p>
+  Вопрос <%= @participation.current_question_counter %> из <%= @participation.test.questions.count %> 
+</p>
+<p><b> <%= @participation.current_question.text %></b></p>
+
+<%= form_with url: participation_path(@participation), local: true, method: :put do |f| %>
+  <%= f.collection_check_boxes :answer_ids, @participation.current_question.answers, :id, :text,  include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box%>
+      <%= b.label %>
+    </p>
+  <% end %>
+
+  <p>
+  <%= f.submit 'Дальше' %>
+  </p>
+<% end %>
+<%= render "linktests" %>

@@ -1,7 +1,11 @@
-<h1>Тест №<%= @test.id %>: <%= @test.title %></h1>
-<p>Категория: <%= @test.category.title %></p>
-<p>Уровень: <%= @test.level %></p>
-<% if @test.questions %>
-  <p>Количество вопросов: <%= @test.questions.count %></p>
+<h1> Тест: </h1>
+<%= render @test %>
+<% if @test.questions.present? %>
+  <h2> Вопросы: </h2>
   <%= render @test.questions %>
 <% end %>
+<p> <%= link_to 'Добавить вопрос', new_test_question_path(@test) %> </p>
+<li>
+  <%= link_to 'Редактировать тест', edit_test_path(@test) %>
+  <%= link_to 'Удалить тест', test_path(@test), method: :delete %>
+</li>
