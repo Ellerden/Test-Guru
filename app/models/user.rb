@@ -2,7 +2,6 @@
 require 'digest/sha1'
 
 class User < ApplicationRecord
-  include Auth
 
   has_many :participations, dependent: :destroy
   has_many :tests, through: :participations, dependent: :destroy
