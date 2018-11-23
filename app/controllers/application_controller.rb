@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
+    session[:forwarding_url] = request.original_url if request.get?
     redirect_to login_path, alert: 'Вы уже пользователь? Введите логин и пароль' unless current_user
     cookies[:username] = current_user&.username
   end

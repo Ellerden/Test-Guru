@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      redirect_to session[:forwarding_url]
     else
       flash.now[:alert] = 'Вы уже пользователь? Тогда введите логин и пароль'
       render :new
