@@ -2,13 +2,18 @@
 require 'digest/sha1'
 
 class User < ApplicationRecord
+  attr_reader :password
+  attr_writer :password_confirmation
+
   has_many :participations, dependent: :destroy
   has_many :tests, through: :participations, dependent: :destroy
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id,
                            dependent: :destroy
 
-  validates :name, :email, :password, :username, presence: true
+  validates :name, :email, :username, presence: true
   validates :email, :username, uniqueness: true
+  validates :password, presence: true, if: Proc.new { |user| user.password_digest.blank? }
+  validates :password, confirmation: true
 
   def test_passed_by_level(level)
     Test.joins(:participations).where(tests: { level: level })
@@ -20,6 +25,15 @@ class User < ApplicationRecord
 
   def authenticate(input_password)
     digest(input_password) == self.password_digest ? self : false
+  end
+
+  def password=(input_password)
+    if input_password.nil?
+      self.password_digest = nil
+    elsif input_password.present?
+      @password = input_password
+      self.password_digest = digest(@password)
+    end
   end
 
   private
