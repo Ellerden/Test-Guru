@@ -11,7 +11,10 @@
 
   <body>
     <% if logged_in? %>
-      <p class="nav user">Добро пожаловать, <b><%= current_user.username%></b>!</p> 
+      <p class="nav user">
+        Добро пожаловать, <b><%= current_user.username%></b>!
+        <%= link_to 'Выйти', logout_path %>
+      </p>
     <% end %>
 
     <%= yield %>
