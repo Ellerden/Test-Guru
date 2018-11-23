@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id,
                            dependent: :destroy
 
-  #has_secure_password
+  has_secure_password
 
   def test_passed_by_level(level)
     Test.joins(:participations).where(tests: { level: level })
