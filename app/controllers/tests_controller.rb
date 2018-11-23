@@ -26,7 +26,7 @@ class TestsController < ApplicationController
     @test = @user.created_tests.build
   end
 
-  # по умолчанию добавляю пока все тесты первому юзеру как автору.
+  # тест добавляется текущему юзеру как автору
   def create
     @test = @user.created_tests.build(test_params)
     if @test.save
@@ -57,9 +57,8 @@ class TestsController < ApplicationController
     @questions = @test.questions
   end
 
-# пока нет системы аутентификации и идентификации - дальше это надо будет исправить
   def find_user
-    @user = User.first
+    @user = @current_user
   end
 
   def test_params
