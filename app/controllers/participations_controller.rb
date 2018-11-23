@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ParticipationsController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :find_participation, only: %i[show update result]
   before_action :set_test, only: %i[show update result]
 
