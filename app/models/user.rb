@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id,
                            dependent: :destroy
 
+  validates :username, presence: true, uniqueness: true, on: :create
+  validates :email, uniqueness: true,
+                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+
   has_secure_password
 
   def test_passed_by_level(level)
