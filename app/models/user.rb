@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'digest/sha1'
 
 class User < ApplicationRecord
   has_many :participations, dependent: :destroy
@@ -15,5 +16,16 @@ class User < ApplicationRecord
 
   def participation(test)
     participations.order(id: :desc).find_by(test: test)
+  end
+
+  def authenticate(input_password)
+    digest(input_password) == self.password_digest ? self : false
+  end
+
+  private
+
+  # сюда в продакшене надо бы добавить salt
+  def digest(string)
+    Digest::SHA1.hexdigest(string)
   end
 end

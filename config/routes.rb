@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'users/new'
   root 'tests#index'
 
   resources :tests do
@@ -19,5 +20,8 @@ Rails.application.routes.draw do
       get :result
     end
   end
+
+  get :signup, to: 'users#new'
+  resources :users, only: :create
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
