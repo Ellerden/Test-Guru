@@ -7,10 +7,8 @@ class User < ApplicationRecord
   has_many :tests, through: :participations, dependent: :destroy
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id,
                            dependent: :destroy
-
-  validates :username, presence: true, uniqueness: true, on: :create
-  validates :email, uniqueness: true,
-                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  # в дальнейшем можно отсылать письмо со ссылкой для верификации акка
+  validates :email, uniqueness: true, format: { with: /@/ }
 
   has_secure_password
 
