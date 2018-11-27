@@ -9,8 +9,10 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    session[:forwarding_url] = request.original_url if request.get? && current_user.nil?
-    redirect_to login_path, alert: 'Вы уже пользователь? Введите логин и пароль' unless current_user
+    unless current_user
+      session[:forwarding_url] = request.original_url
+      redirect_to login_path, alert: 'Вы уже пользователь? Введите логин и пароль'
+    end
   end
 
   def current_user

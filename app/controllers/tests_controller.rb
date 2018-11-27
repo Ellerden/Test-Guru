@@ -22,12 +22,12 @@ class TestsController < ApplicationController
   end
 
   def new
-    @test = @user.created_tests.build
+    @test = current_user.created_tests.build
   end
 
   # тест добавляется текущему юзеру как автору
   def create
-    @test = @user.created_tests.build(test_params)
+    @test = current_user.created_tests.build(test_params)
     if @test.save
       redirect_to @test
     else
@@ -42,8 +42,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.participation(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.participation(@test)
   end
 
   private
@@ -57,7 +57,7 @@ class TestsController < ApplicationController
   end
 
   def find_user
-    @user = current_user
+    current_user
   end
 
   def test_params
