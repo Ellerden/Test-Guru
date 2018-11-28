@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TestsController < ApplicationController
+class Admin::TestsController < ApplicationController
   before_action :find_test, only: %i[destroy show update edit start]
   before_action :set_questions, only: %i[destroy show update edit start]
   #before_action :find_user, only: %i[start new create update]

@@ -13,6 +13,7 @@ class ParticipationsController < ApplicationController
   def update
     @participation.accept!(params[:answer_ids])
     if @participation.completed?
+      TestsMailer.completed_test(@participation).deliver_now
       redirect_to result_participation_path(@participation)
     else
       render :show
