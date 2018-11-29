@@ -3,11 +3,6 @@
 class AnswersController < ApplicationController
   before_action :find_answer, only: %i[show]
 
-  # /answers/
-  def index
-    @answers = Answer.all
-  end
-
  # /answers/id
   def show
   end
