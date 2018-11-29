@@ -6,6 +6,6 @@
 <% end %>
 <p> <%= link_to 'Добавить вопрос', new_test_question_path(@test) %> </p>
 <li>
-  <%= link_to 'Редактировать тест', edit_test_path(@test) %>
-  <%= link_to 'Удалить тест', test_path(@test), method: :delete %>
+  <%= link_to 'Редактировать тест', edit_admin_test_path(@test) %>
+  <%= link_to 'Удалить тест', admin_test_path(@test), method: :delete %>
 </li>

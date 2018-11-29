@@ -1,7 +1,8 @@
 <p class="nav user">
   <%= link_to 'TestGuru', root_path %>
   <% if user_signed_in? %>
-    Добро пожаловать, <b><%= current_user.name %></b>!
+    Добро пожаловать, <b><%= current_user.email %></b>!
+    <%= current_user.is_a?(Admin) %>
     <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to 'Войти', new_user_session_path %>
