@@ -1,4 +1,4 @@
 <h1> Редактирование ответа </h1>
 <h2> Вопрос:<%= @answer.question.text %></h2>
 <%= render 'form' %>
-<%= link_to 'Назад', question_path(@answer.question) %>
+<%= link_to 'Назад', admin_question_path(@answer.question) %>

@@ -1,0 +1,9 @@
+<%= question.text %>
+<div>
+  <p>
+    <%= link_to 'Показать ответы', admin_question_path(question) %>
+    <%= link_to 'Редактировать', edit_admin_question_path(question) %>
+    <%= link_to 'Удалить', admin_question_path(question), method: :delete %>
+  </p>
+</div>
+</br>

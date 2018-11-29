@@ -2,9 +2,8 @@
 
 class Admin::TestsController < Admin::BaseController
  # skip_before_action :authenticate_user!
-  before_action :find_test, only: %i[destroy show update edit start]
-  before_action :set_questions, only: %i[destroy show update edit start]
-  #before_action :find_user, only: %i[start new create update]
+  before_action :find_test, only: %i[destroy show update edit]
+  before_action :set_questions, only: %i[destroy show update edit]
 
   def index
     @tests = Test.all
@@ -16,7 +15,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :edit
     end
@@ -26,25 +25,19 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.build
   end
 
-  # тест добавляется текущему юзеру как автору
+  # тест добавляется текущему админу как автору
   def create
     @test = current_user.created_tests.build(test_params)
     if @test.save
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :new
     end
   end
 
- # возможность удалять тест (кнопка, ссылка) пока нигде не используется
   def destroy
     @test.destroy
-    redirect_to tests_path
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.participation(@test)
+    redirect_to admin_tests_path
   end
 
   private

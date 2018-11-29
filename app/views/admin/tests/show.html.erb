@@ -4,8 +4,6 @@
   <h2> Вопросы: </h2>
   <%= render @test.questions %>
 <% end %>
-<p> <%= link_to 'Добавить вопрос', new_test_question_path(@test) %> </p>
-<li>
-  <%= link_to 'Редактировать тест', edit_admin_test_path(@test) %>
-  <%= link_to 'Удалить тест', admin_test_path(@test), method: :delete %>
-</li>
+<p> <%= link_to 'Добавить вопрос', new_admin_test_question_path(@test) %> 
+    <%= link_to 'Назад', admin_tests_path %>
+</p>
