@@ -11,8 +11,7 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id,
                            dependent: :destroy
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :first_name, :last_name, presence: true
 
   def test_passed_by_level(level)
     Test.joins(:participations).where(tests: { level: level })

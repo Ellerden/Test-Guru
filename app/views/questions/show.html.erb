@@ -1,9 +1,0 @@
-<h1>Вопрос теста: "<%= @question.test.title %>"</h1>
-<h2>
-  <%= @question.text %>
-</h2>
-
-<ol>
-  <%= render @question.answers %>
-</ol>
-<%= link_to 'Назад', test_path(@question.test) %>
