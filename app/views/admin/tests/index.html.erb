@@ -1,0 +1,5 @@
+<% if @tests.present? %>
+  <h1>Все тесты:</h1>
+  <%= render @tests %>
+<% end %>
+<p><%= link_to 'Создать тест', new_admin_test_path%></p>

@@ -1,0 +1,9 @@
+<h1> Тест: </h1>
+<%= render @test %>
+<% if @test.questions.present? %>
+  <h2> Вопросы: </h2>
+  <%= render @test.questions %>
+<% end %>
+<p> <%= link_to 'Добавить вопрос', new_admin_test_question_path(@test) %> 
+    <%= link_to 'Назад', admin_tests_path %>
+</p>

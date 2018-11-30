@@ -1,10 +1,10 @@
 <p class="nav user">
   <%= link_to 'TestGuru', root_path %>
-  <% if logged_in? %>
-    Добро пожаловать, <b><%= current_user.name %></b>!
-    <%= link_to 'Выйти', logout_path %>
+  <% if user_signed_in? %>
+    Добро пожаловать, <b><%= current_user.first_name %></b>!
+    <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
   <% else %>
-    <%= link_to 'Войти', login_path %>
-    <%= link_to 'Регистрироваться', signup_path %>
+    <%= link_to 'Войти', new_user_session_path %>
+    <%= link_to 'Регистрироваться', new_user_registration_path %>
   <% end %>
 </p>
