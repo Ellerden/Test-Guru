@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Admin::TestsController < Admin::BaseController
- # skip_before_action :authenticate_user!
   before_action :find_test, only: %i[destroy show update edit]
   before_action :set_questions, only: %i[destroy show update edit]
 
