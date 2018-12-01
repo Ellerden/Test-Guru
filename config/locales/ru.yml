@@ -69,7 +69,7 @@ ru:
       welcome: "Добро пожаловать"
       login: "Войти"
       logout: "Выйти" 
-      signin: "Зарегистрироваться" 
+      signup: "Зарегистрироваться" 
 
   test_mailer:
     completed_test:
@@ -200,3 +200,24 @@ ru:
   sessions:
     create:
       greetings: "Добро пожаловать %{full_name}!"
+
+  devise:
+    registrations:
+        new:
+          signup_header: "Регистрация"
+          pass_length: "Минимум %{password_length} символов"
+          sign_up: "Зарегистрироваться"
+    sessions:
+      new:
+        login_header: "Войти"
+        remember_me: "Запомнить меня"
+        login: "Войти"
+        password: "Пароль"
+    shared:
+      links:
+        login: "Войти"
+        signup: "Зарегистрироваться"
+        forgot_password: "Забыли пароль?"
+        no_confirm_instructions: "Не получили письмо подтверждения?"
+        no_unlock_instructions: "Не получили письмо о разблокировке?"
+        omni_auth: "Войти с %{links}"
