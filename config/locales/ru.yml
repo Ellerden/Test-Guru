@@ -177,6 +177,11 @@ ru:
   tests:
     index:
       header: "Все тесты"
+    test:
+      category: "Категория"
+      level: "Уровень"
+      questions_number: "Кол-во вопросов"
+      start_test: "Пройти тест"
 
   participations:
     linktests:
