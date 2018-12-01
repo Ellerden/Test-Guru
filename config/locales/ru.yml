@@ -170,11 +170,19 @@ ru:
     index:
       header: "Все тесты"
 
-
-
   participations:
+    linktests:
+      all_tests: "Ко всем тестам"
     result:
       header: "Tест '%{title}' завершен!"
+      congratulations: "Поздравляем, вы успешно прошли тест!"
+      condolences: "К сожалению, тест не пройден :("
+      result: "Ваш результат:"
+    show:
+      participation: "Вы проходите тест: \"%{test_title}\""
+      question: "Вопрос %{current_number}"
+      out_of: "из %{all_counter}"
+      next: "Дальше"
 
   sessions:
     create:
