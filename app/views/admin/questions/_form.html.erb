@@ -1,8 +1,8 @@
-<h1> <%= question_header(@question) %> </h1>
+<%= question_header(@question) %>
 <%= form_with(model: [:admin, @test, @question], local: true) do |f| %>
    <div>
-     <%= f.label 'Текст вопроса' %>
-     <%= f.text_field :text, placeholder: "Введите текст вопроса" %>
+     <%= f.label :text %>
+     <%= f.text_field :text, placeholder: true %>
    </div>
    <%= f.submit %>
  <% end %>

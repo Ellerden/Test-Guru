@@ -1,10 +1,10 @@
-<h1>Вопрос теста: "<%= @question.test.title %>"</h1>
+<h1> <%= t('.header', title: @question.test.title) %></h1>
 <h2>
   <%= @question.text %>
 </h2>
 
 <ol>
   <%= render @question.answers %>
-  <%= link_to 'Создать новый ответ', new_admin_question_answer_path(@question)%>
+  <%= link_to t('.new_answer'), new_admin_question_answer_path(@question)%>
 </ol>
-<p><%= link_to 'Назад', admin_test_path(@question.test) %></p> 
+<p><%= link_to t('.back'), admin_test_path(@question.test) %></p> 

@@ -1,3 +1,2 @@
-<%= question_header(@question) %>
 <%= render 'form' %>
-<p><%= link_to 'Назад', admin_test_path(@question.test) %></p> 
+<p><%= link_to t('.back'), admin_test_path(@question.test) %></p> 

@@ -39,9 +39,8 @@ ru:
         level: "Уровень"
         category_id: "Категория"
       question:
-        title: "Название теста"
-        level: "Уровень"
-        category_id: "Категория"
+        text: "Текст вопроса"
+        test_id: "Тест"
       answer:
         text: "Текст ответа"
         correct: "Правильность"
@@ -51,6 +50,8 @@ ru:
         title: "Введите название теста"
       answer:
         text: "Введите текст ответа"
+      question:
+        text: "Введите текст вопроса"
     select:
         prompt: "Выберите категорию"
 
@@ -91,10 +92,26 @@ ru:
         success: "Вопрос успешно удален!"
       show:
         not_found: "Вопрос не найден"
+        back: "Назад"    
+      question:
+        show_answers: "Показать ответы"
+        edit: "Изменить"
+        delete: "Удалить"
       form:
-        new_question: "Новый вопрос теста \"%{title}\""
         edit_question: "Редактирование вопроса теста \"%{title}\""
-
+        new_question: "Новый вопрос теста \"%{title}\""
+      edit:
+        back: "Назад"
+      new:
+        back: "Назад"
+      show:
+        header: "Вопрос теста \"%{title}\""
+        new_answer: "Создать новый ответ"
+        back: "Назад"
+      index:
+        header: "Вопросы теста:"
+        back: "Назад"
+  
     answers:
       create:
         success: "Ответ успешно создан!"
@@ -106,26 +123,18 @@ ru:
         show: "Показать"
         edit: "Изменить"
         delete: "Удалить"
-      edit:
+      form:
         edit_answer: "Редактирование ответа"
-        question: "Вопрос: \"%{question_text}\""
-        back: "Назад"
-      new:
         new_answer: "Создание нового ответа"
         question: "Вопрос: \"%{question_text}\""
+      edit:
+        back: "Назад"
+      new:
         back: "Назад"
       show:
         question: "Вопрос: \"%{question_text}\""
         back: "Назад"
-
-        
-        
-
-
       index:
-        show: "Показать"
-        edit: "Изменить"
-        delete: "Удалить"
         back: "Назад"
 
 

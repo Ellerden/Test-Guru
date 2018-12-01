@@ -1,3 +1,5 @@
+<%= answer_header(@answer) %>
+<%= answer_question_text(@answer) %>
 <%= form_with(model: [:admin, @question, @answer], local: true) do |f| %>
   <p>
     <%= f.label :text %>
