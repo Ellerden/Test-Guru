@@ -1,4 +1,4 @@
-<h1> Создание нового ответа </h1>
-<h2> Вопрос:<%= @question.text %></h2>
+<%= answer_header(@answer) %>
+<%= answer_question_text(@answer) %>
 <%= render 'form' %>
-<%= link_to 'Назад', admin_question_path(@answer.question) %>
+<%= link_to t('.back'), admin_question_path(@answer.question) %>

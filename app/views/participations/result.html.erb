@@ -1,5 +1,5 @@
 <% color = @participation.success? ? "success" : "fail" %>
-<h1>Вы завершили тест "<%= @participation.test.title %>"</h1>
+<h1><%= t('.header', title: @participation.test.title) %></h1>
 <% if @participation.success? %>
   <h2>Поздравляем, вы успешно прошли тест! </h2>
 <% else %>

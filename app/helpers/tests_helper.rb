@@ -2,10 +2,6 @@
 
 module TestsHelper
   def test_header(test)
-    if test.persisted?
-      "Edit #{test.title}"
-    else
-      'Create New Test'
-    end
+    content_tag(:h1, test.persisted? ? t('.edit_test', title: test.title) : t('.new_test'))
   end
 end

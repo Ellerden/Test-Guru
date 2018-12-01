@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :tests, only: :index do
     resources :questions, shallow: true, only: :show do
-      resources :answers, shallow: true, only: :show
+      resources :answers, shallow: true
     end
 
     member do
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :tests do
       resources :questions, shallow: true, except: :index do
-        resources :answers, shallow: true, except: :index
+        resources :answers, shallow: true, except: %i[show index]
       end
     end
   end

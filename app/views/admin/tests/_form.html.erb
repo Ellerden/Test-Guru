@@ -1,16 +1,18 @@
 <h1> <%= test_header(@test) %> </h1>
 <%= form_with(model: [:admin, @test], local: true) do |f| %>
   <div>
-    <%= f.label 'Название теста' %>
-    <%= f.text_field :title, placeholder: "Введите название теста" %>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: true %>
     <p>
-      <%= f.label 'Уровень' %> 
+      <%= f.label :level %> 
       <%= f.collection_radio_buttons :level, (1..5).map{ |n| [n, n] }, :first, :last %>
     </p>
     <p> 
-      <%= f.label 'Категория' %>
-      <%= f.collection_select(:category_id, Category.all, :id, :title, prompt: true) %>
+      <%= f.label :category_id %>
+      <%= f.collection_select(:category_id, Category.all, :id, :title, prompt: :true) %>
+    </p>
+    <p>
+      <%= f.submit %>
     </p>
   </div>
-   <%= f.submit 'Отправить' %>
  <% end %>

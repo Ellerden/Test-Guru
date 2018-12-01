@@ -14,7 +14,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to admin_test_path(@test)
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Admin::QuestionsController < Admin::BaseController
   # /questions/:id(.:format)
   def destroy
     @question.destroy
-    redirect_to admin_test_path(Test.find(@question.test_id))
+    redirect_to admin_test_path(Test.find(@question.test_id)), notice: t('.success')
   end
 
   # /questions/:id(.:format)
@@ -36,7 +36,7 @@ class Admin::QuestionsController < Admin::BaseController
   # нужно менять пермиты в question_params
   def update
     if @question.update(question_params)
-      redirect_to admin_test_path(Test.find(@question.test_id))
+      redirect_to admin_test_path(Test.find(@question.test_id)), notice: t('.success')
     else
       render :new
     end
@@ -57,6 +57,6 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Вопрос не найден'
+    redirect_to admin_tests_path, alert: t('.not_found')
   end
 end

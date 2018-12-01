@@ -1,6 +1,15 @@
-<li>
-  <%= answer.text %>
-  <%= link_to 'Показать', admin_answer_path(answer) %>
-  <%= link_to 'Редактировать', edit_admin_answer_path(answer) %>
-  <%= link_to 'Удалить', admin_answer_path(answer), method: :delete %>
-</li>
+<tr>
+  <td style="text-align: center">
+    <%= answer.correct %>
+  </td>
+  <td>
+    <%= answer.text %>
+  </td>
+  <td class="text-center"> 
+    <%= link_to t('.edit'), edit_admin_answer_path(answer) %> 
+  </td>
+  <td class="text-center"> 
+    <%= link_to t('.delete'), admin_answer_path(answer), method: :delete %> 
+  </td>
+</tr>
+</br>
