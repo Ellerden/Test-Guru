@@ -82,6 +82,22 @@ ru:
       form:
         new_test: "Новый тест"
         edit_test: "Редактировать тест \"%{title}\""
+      test:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+        category: "Категория"
+        level: "Уровень"
+        questions_number: "Количество вопросов"
+      edit:
+        back: "Назад"
+      new:
+        back: "Назад"
+      show:
+        test_title: "Тест"
+        test_questions: "Вопросы"
+        add_question: "Добавить вопрос"
+        back: "Назад"
 
     questions:
       create:
@@ -137,8 +153,6 @@ ru:
       index:
         back: "Назад"
 
-
-
     category:
       create:
         success: "Категория успешно создана!"
@@ -146,6 +160,11 @@ ru:
         success: "Категория успешно обновлена!"
       destroy:
         success: "Категория успешно удалена!"
+
+    nav:
+      admin_panel_title: "Панель администратора Test Guru"
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
 
   tests:
     index:

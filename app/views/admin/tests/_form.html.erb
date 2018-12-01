@@ -1,4 +1,4 @@
-<h1> <%= test_header(@test) %> </h1>
+<%= test_header(@test) %>
 <%= form_with(model: [:admin, @test], local: true) do |f| %>
   <div>
     <%= f.label :title %>

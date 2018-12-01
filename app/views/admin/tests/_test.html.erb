@@ -1,11 +1,11 @@
 <h2><%= test.id %> - <%= test.title %> </h2>
-<p>Категория: <%= test.category.title %></p>
-<p>Уровень: <%= test.level %> </p>
-<p>Кол-во вопросов: <%= test.questions.count %></p>
+<p><%= t('.category') %>: <%= test.category.title %></p>
+<p><%= t('.level') %>: <%= test.level %> </p>
+<p><%= t('.questions_number') %>: <%= test.questions.count %></p>
 <div>
   <p>
-    <%= link_to 'Показать', admin_test_path(test) %>
-    <%= link_to 'Редактировать', edit_admin_test_path(test) %>
-    <%= link_to 'Удалить', admin_test_path(test), method: :delete %>
+    <%= link_to t('.show'), admin_test_path(test) %>
+    <%= link_to t('.edit'), edit_admin_test_path(test) %>
+    <%= link_to t('.delete'), admin_test_path(test), method: :delete %>
   </p>
 </div>
