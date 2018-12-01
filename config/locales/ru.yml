@@ -62,6 +62,14 @@ ru:
         many: "%{count} ошибок"
         one: "%{count} ошибка"
         other: "%{count} ошибки"
+    footer:
+      copyright: "(c) Дарья Щеглова - проект Test Guru"
+      about_project: "Конструктор тестов – учебный проект в онлайн-школе"
+    menu:
+      welcome: "Добро пожаловать"
+      login: "Войти"
+      logout: "Выйти" 
+      signin: "Зарегистрироваться" 
 
   test_mailer:
     completed_test:
