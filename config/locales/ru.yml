@@ -200,4 +200,3 @@ ru:
   sessions:
     create:
       greetings: "Добро пожаловать %{full_name}!"
-

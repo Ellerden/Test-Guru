@@ -30,34 +30,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-
-  helpers:
-    submit:
-      test:
-        create: "Create"
-        update: "Save"
-    label:
+  activerecord:
+    models:
+      test: "Test"
+      user: "User"
+      participation: "Test passage"
+      answer: "Answer"
+      question: "Question"
+      category: "Category"
+    attributes:
       test:
         title: "Test title"
         level: "Level"
-        category_id: "Category"
-
-  tests:
-    index:
-      header: "All tests"
-
-  admin:
-    tests:
-      create:
-        success: "Test was successfully created!"
-      index:
-        header: "All tests"
-      update:
-        success: "Test was successfully updated!"
-      destroy:
-        success: "Test was successfully destroyed!"
-
+        category: "Category"
+      user:
+        first_name: "Name"
+        last_name: "Lastname"
+        email: "E-mail"
+        password: "Password"
+        password_confirmation: "Password confirmation"
   errors:
     # The default format to use in full error messages.
     format: "%{attribute} %{message}"
