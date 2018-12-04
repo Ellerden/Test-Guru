@@ -1,6 +1,7 @@
-<h1>Вы проходите тест: "<%= @participation.test.title %>"</h1>
+<h1><%= t('.participation', test_title: @participation.test.title) %></h1>
 <p>
-  Вопрос <%= @participation.current_question_counter %> из <%= @participation.test.questions.count %> 
+  <%= t('.question', current_number: @participation.current_question_counter) %>
+  <%= t('.out_of', all_counter: @participation.test.questions.count) %>
 </p>
 <p><b> <%= @participation.current_question.text %></b></p>
 
@@ -13,7 +14,7 @@
   <% end %>
 
   <p>
-  <%= f.submit 'Дальше' %>
+  <%= f.submit t('.next') %>
   </p>
 <% end %>
 <%= render "linktests" %>

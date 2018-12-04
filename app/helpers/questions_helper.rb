@@ -2,10 +2,6 @@
 
 module QuestionsHelper
   def question_header(question)
-    if question.persisted?
-      "Edit #{question.test.title} Question"
-    else
-      "Create New #{question.test.title} Question"
-    end
+    content_tag(:h1, question.persisted? ? t('.edit_question', title: question.test.title) : t('.new_question', title: question.test.title))
   end
 end

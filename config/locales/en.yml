@@ -30,39 +30,193 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  errors:
-    # The default format to use in full error messages.
-    format: "%{attribute} %{message}"
+  hello: "Hello, world"
 
-    # The values :model, :attribute and :value are always available for interpolation
-    # The value :count is available when applicable. Can be used for pluralization.
-    messages:
-      model_invalid: "Validation failed: %{errors}"
-      inclusion: "is not included in the list"
-      exclusion: "is reserved"
-      invalid: "is invalid"
-      confirmation: "doesn't match %{attribute}"
-      accepted: "must be accepted"
-      empty: "can't be empty"
-      blank: "can't be blank"
-      present: "must be blank"
-      too_long:
-        one: "is too long (maximum is 1 character)"
-        other: "is too long (maximum is %{count} characters)"
-      too_short:
-        one: "is too short (minimum is 1 character)"
-        other: "is too short (minimum is %{count} characters)"
-      wrong_length:
-        one: "is the wrong length (should be 1 character)"
-        other: "is the wrong length (should be %{count} characters)"
-      not_a_number: "is not a number"
-      not_an_integer: "must be an integer"
-      greater_than: "must be greater than %{count}"
-      greater_than_or_equal_to: "must be greater than or equal to %{count}"
-      equal_to: "must be equal to %{count}"
-      less_than: "must be less than %{count}"
-      less_than_or_equal_to: "must be less than or equal to %{count}"
-      other_than: "must be other than %{count}"
-      odd: "must be odd"
-      even: "must be even"
+  helpers:
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        text: "Question's text"
+        test_id: "Test"
+      answer:
+        text: "Answer's text"
+        correct: "Correct"
+        question_id: "Question"
+    placeholder: 
+      test:
+        title: "Write your test title"
+      answer:
+        text: "Write your answer"
+      question:
+        text: "Write your question"
+    select:
+        prompt: "Select the category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error"
+        other: "%{count} errors"
+    footer:
+      copyright: "(c) Daria Shcheglove - project Test Guru"
+      about_project: "Test constructor was created as a school-project at the online-school"
+    menu:
+      welcome: "Welcome"
+      login: "Log in"
+      logout: "Log out" 
+      signup: "Sign up" 
+
+  test_mailer:
+    completed_test:
+      subject: "You've finished the test on TestGuru"
+
+  admin:
+    tests:
+      index:
+        header: "All tests"
+        no_rights: "You should have admin rights to see this content"
+      create:
+        success: "Test was successfully created!"
+      update:
+        success: "Test was successfully updated!"
+        header: "Create test %{title}"
+      destroy:
+        success: "Test was successfully deleted!"
+      form:
+        new_test: "New test"
+        edit_test: "Edit test \"%{title}\""
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        category: "Category"
+        level: "Level"
+        questions_number: "Number of questions"
+      edit:
+        back: "Back"
+      new:
+        back: "Back"
+      show:
+        test_title: "Test"
+        test_questions: "Questions"
+        add_question: "Add question"
+        back: "Back"
+
+    questions:
+      create:
+        success: "Question was successfully created!"
+      update:
+        success: "Question was successfully updated!"
+      destroy:
+        success: "Question was successfully deleted!"
+      show:
+        not_found: "Question was not found"
+        back: "Back"    
+      question:
+        show_answers: "Show answers"
+        edit: "Edit"
+        delete: "Delete"
+      form:
+        edit_question: "Edit question of the test \"%{title}\""
+        new_question: "New question for the test  \"%{title}\""
+      edit:
+        back: "Back"
+      new:
+        back: "Back"
+      show:
+        header: "Question of the test \"%{title}\""
+        new_answer: "Create new answer"
+        back: "Back"
+      index:
+        header: "Test's questions:"
+        back: "Back"
+  
+    answers:
+      create:
+        success: "Answer was successfully created!"
+      update:
+        success: "Answer was successfully updated!"
+      destroy:
+        success: "Answer was successfully deleted!"
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      form:
+        edit_answer: "Edit answer"
+        new_answer: "Create new answer"
+        question: "Question: \"%{question_text}\""
+      edit:
+        back: "Back"
+      new:
+        back: "Back"
+      show:
+        question: "Question: \"%{question_text}\""
+        back: "Back"
+      index:
+        back: "Back"
+
+    category:
+      create:
+        success: "Category was successfully created!"
+      update:
+        success: "Category was successfully updated!"
+      destroy:
+        success: "Category was successfully deleted!"
+
+    nav:
+      admin_panel_title: "Admin panel Test Guru"
+      welcome: "Welcome"
+      logout: "Log out"
+
+  tests:
+    index:
+      header: "All tests"
+    test:
+      category: "Category"
+      level: "Level"
+      questions_number: "Number of questions"
+      start_test: "Start test"
+
+  participations:
+    linktests:
+      all_tests: "All tests"
+    result:
+      header: "Test \"%{title}\" was completed! "
+      congratulations: "Congratulations, you've successfully passed the test!"
+      condolences: "Unfortunately, you've failed the test :("
+      result: "Your result:"
+    show:
+      participation: "You're passing this test: \"%{test_title}\""
+      question: "Question %{current_number}"
+      out_of: "out of %{all_counter}"
+      next: "Next"
+
+  sessions:
+    create:
+      greetings: "Welcome %{full_name}!"
+
+  devise:
+    registrations:
+      new:
+        signup_header: "Sign up"
+        pass_length: "Min %{password_length} characters"
+        sign_up: "Sign up"
+    sessions:
+      new:
+        login_header: "Sign in"
+        remember_me: "Remember me"
+        login: "Log in"
+        password: "Password"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot_password: "Forgot password?"
+        no_confirm_instructions: "Didn't receive confirmation instructions?"
+        no_unlock_instructions: "Didn't receive unlock instructions?"
+        omni_auth: "Sign in with %{links}"
+
