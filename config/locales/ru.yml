@@ -65,7 +65,7 @@ ru:
     footer:
       copyright: "(c) Дарья Щеглова - проект Test Guru"
       about_project: "Конструктор тестов – учебный проект в онлайн-школе"
-    menu:
+    nav:
       welcome: "Добро пожаловать"
       login: "Войти"
       logout: "Выйти" 

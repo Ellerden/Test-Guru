@@ -63,7 +63,7 @@ en:
     footer:
       copyright: "(c) Daria Shcheglove - project Test Guru"
       about_project: "Test constructor was created as a school-project at the online-school"
-    menu:
+    nav:
       welcome: "Welcome"
       login: "Log in"
       logout: "Log out" 
