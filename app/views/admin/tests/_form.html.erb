@@ -1,18 +1,27 @@
-<%= test_header(@test) %>
-<%= form_with(model: [:admin, @test], local: true) do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, placeholder: true %>
-    <p>
-      <%= f.label :level %> 
-      <%= f.collection_radio_buttons :level, (1..5).map{ |n| [n, n] }, :first, :last %>
-    </p>
-    <p> 
-      <%= f.label :category_id %>
-      <%= f.collection_select(:category_id, Category.all, :id, :title, prompt: :true) %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
+<div class="container">
+  <div class="col col-md-6">
+    <%= test_header(@test) %>
+    <%= form_with(model: [:admin, @test], local: true) do |f| %>
+      <div class="form-group">
+        <p>
+          <%= f.label :title %>
+          <%= f.text_field :title, placeholder: true, class: "form-control" %>
+        </p>
+        <p>
+          <%= f.label :level %> 
+          <%= f.collection_radio_buttons :level, (1..5).map{ |n| [n, n] }, :first, :last, class: "form-control" %>
+        </p>
+        <p>
+          <%= f.label :category_id %>
+          <%= f.collection_select(:category_id, Category.all, :id, :title, prompt: :true) %>
+        </p>
+        <div class="row">
+          <div class="col col-md-6">
+            <%= f.submit class: "btn btn-primary" %>
+            <%= link_to t('.back'), admin_tests_path, class: "nav-link" %>
+          </div> 
+        </div>
+      </div>
+    <% end %>
   </div>
- <% end %>
+</div>

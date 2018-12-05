@@ -67,7 +67,8 @@ en:
       welcome: "Welcome"
       login: "Log in"
       logout: "Log out" 
-      signup: "Sign up" 
+      signup: "Sign up"
+      admin_panel_title: "Admin Panel Test Guru"
 
   test_mailer:
     completed_test:
@@ -78,6 +79,10 @@ en:
       index:
         header: "All tests"
         no_rights: "You should have admin rights to see this content"
+        start_test: "Start test"
+        category: "Category"
+        level: "Level"
+        questions_number: "Number of questions"
       create:
         success: "Test was successfully created!"
       update:
@@ -88,6 +93,7 @@ en:
       form:
         new_test: "New test"
         edit_test: "Edit test \"%{title}\""
+        back: "Назад"
       test:
         show: "Show"
         edit: "Edit"
@@ -100,7 +106,7 @@ en:
       new:
         back: "Back"
       show:
-        test_title: "Test"
+        test_title: "Test \"%{title}\""
         test_questions: "Questions"
         add_question: "Add question"
         back: "Back"
@@ -122,6 +128,7 @@ en:
       form:
         edit_question: "Edit question of the test \"%{title}\""
         new_question: "New question for the test  \"%{title}\""
+        back: "Back"
       edit:
         back: "Back"
       new:
@@ -149,6 +156,7 @@ en:
         edit_answer: "Edit answer"
         new_answer: "Create new answer"
         question: "Question: \"%{question_text}\""
+        back: "Back"
       edit:
         back: "Back"
       new:
@@ -175,6 +183,10 @@ en:
   tests:
     index:
       header: "All tests"
+      start_test: "Start test"
+      category: "Category"
+      level: "Level"
+      questions_number: "Number of questions"
     test:
       category: "Category"
       level: "Level"

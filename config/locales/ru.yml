@@ -69,7 +69,8 @@ ru:
       welcome: "Добро пожаловать"
       login: "Войти"
       logout: "Выйти" 
-      signup: "Зарегистрироваться" 
+      signup: "Зарегистрироваться"
+      admin_panel_title: "Панель администратора Test Guru"
 
   test_mailer:
     completed_test:
@@ -79,7 +80,14 @@ ru:
     tests:
       index:
         header: "Все тесты"
-        no_rights: 'У вас нет прав для просмотра этой страницы'
+        no_rights: "У вас нет прав для просмотра этой страницы"
+        start_test: "Пройти тест"
+        category: "Категория"
+        level: "Уровень"
+        questions_number: "Кол-во вопросов"
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
       create:
         success: "Тест успешно создан!"
       update:
@@ -90,6 +98,7 @@ ru:
       form:
         new_test: "Новый тест"
         edit_test: "Редактировать тест \"%{title}\""
+        back: "Назад"
       test:
         show: "Показать"
         edit: "Изменить"
@@ -102,7 +111,7 @@ ru:
       new:
         back: "Назад"
       show:
-        test_title: "Тест"
+        test_title: "Тест \"%{title}\""
         test_questions: "Вопросы"
         add_question: "Добавить вопрос"
         back: "Назад"
@@ -124,6 +133,7 @@ ru:
       form:
         edit_question: "Редактирование вопроса теста \"%{title}\""
         new_question: "Новый вопрос теста \"%{title}\""
+        back: "Назад"
       edit:
         back: "Назад"
       new:
@@ -151,6 +161,7 @@ ru:
         edit_answer: "Редактирование ответа"
         new_answer: "Создание нового ответа"
         question: "Вопрос: \"%{question_text}\""
+        back: "Назад"
       edit:
         back: "Назад"
       new:
@@ -177,6 +188,10 @@ ru:
   tests:
     index:
       header: "Все тесты"
+      start_test: "Пройти тест"
+      category: "Категория"
+      level: "Уровень"
+      questions_number: "Кол-во вопросов"
     test:
       category: "Категория"
       level: "Уровень"

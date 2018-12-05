@@ -1,8 +1,24 @@
-<%= question_header(@question) %>
-<%= form_with(model: [:admin, @test, @question], local: true) do |f| %>
-   <div>
-     <%= f.label :text %>
-     <%= f.text_field :text, placeholder: true %>
-   </div>
-   <%= f.submit %>
- <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col col-6">
+      <%= question_header(@question) %>
+    </div>
+  </div>
+      <%= form_with(model: [:admin, @test, @question], local: true) do |f| %>
+        <div class="row">
+          <div class="col col-6">
+            <div class="form-group">
+                <%= f.label :text %>
+                <%= f.text_field :text, placeholder: true, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <%= f.submit class: "btn btn-primary" %>
+            <%= link_to t('.back'), admin_test_path(@question.test), class: "nav-link" %>
+          </div>
+        </div> 
+      <% end %>
+  </div>
+</div>
