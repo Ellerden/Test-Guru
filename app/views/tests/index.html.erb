@@ -7,8 +7,8 @@
     </div>
       <div class="row">
 
-      <% @tests.each_slice(3) do |two_tests| %>
-        <% two_tests.each do |test| %>
+      <% @tests.each_slice(3) do |tests_group| %>
+        <% tests_group.each do |test| %>
             <div class="col-sm-4">
               <div class="card test-card" >
                 <h4><%= test.id %> - <%= test.title %> </h4>
