@@ -206,6 +206,9 @@ en:
       question: "Question %{current_number}"
       out_of: "out of %{all_counter}"
       next: "Next"
+    gist:
+      success: "Gist was successfully saved"
+      fail: "Something went wrong while saving Gist"
 
   sessions:
     create:

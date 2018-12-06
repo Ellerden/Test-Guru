@@ -211,6 +211,9 @@ ru:
       question: "Вопрос %{current_number}"
       out_of: "из %{all_counter}"
       next: "Дальше"
+    gist:
+      success: "Gist успешно сохранен"
+      fail: "Во время сохранения Gist произошла ошибка"
 
   sessions:
     create:

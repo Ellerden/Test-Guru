@@ -14,6 +14,9 @@
         </div>
       <% end %>
       <%= f.submit t('.next'), class: 'btn btn-primary'%>
+      <p> 
+        <%= link_to 'Gist Question', gist_participation_path(@participation), method: :post %>
+      </p>
     </div>
   <% end %>
   <%= render "linktests" %>
