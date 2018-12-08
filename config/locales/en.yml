@@ -31,6 +31,8 @@
 
 en:
   hello: "Hello, world"
+  
+  gist_description: "A question about \"%{test_title}\" from TestGuru"
 
   helpers:
     label:

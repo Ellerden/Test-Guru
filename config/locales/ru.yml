@@ -32,6 +32,8 @@
 ru:
   hello: "Привет, мир"
 
+  gist_description: "Вопрос из теста \"%{test_title}\" с портала TestGuru"
+
   helpers:
     label:
       test:
@@ -212,7 +214,7 @@ ru:
       out_of: "из %{all_counter}"
       next: "Дальше"
     gist:
-      success: "Gist успешно сохранен"
+      success: "Gist успешно сохранен: %{link}"
       fail: "Во время сохранения Gist произошла ошибка"
 
   sessions:
