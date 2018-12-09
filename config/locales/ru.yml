@@ -214,8 +214,10 @@ ru:
       out_of: "из %{all_counter}"
       next: "Дальше"
     gist:
-      success: "Gist успешно сохранен: %{link}"
-      fail: "Во время сохранения Gist произошла ошибка"
+      #success: "Gist успешно сохранен: %{view_context.link_to('reset it', result.gist_hash )}"
+     # success: "Gist успешно сохранен"
+      success: "Вопрос успешно <a target=\"_blank\" href=\"%{url}\">отправлен</a> в Gist"
+      fail: "Во время отправки вопроса в Gist произошла ошибка"
 
   sessions:
     create:
