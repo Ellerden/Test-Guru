@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  FLASH = { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }.freeze
+  FLASH = { success: "success", error: "danger", alert: "warning", notice: "info" }.freeze
 
   def current_year
     Time.current.year
@@ -12,6 +12,6 @@ module ApplicationHelper
   end
 
   def alert_for(type)
-    FLASH.fetch(type.to_sym, type.to_s)
+    "alert-#{FLASH.fetch(type.to_sym, type.to_s)}"
   end
 end
