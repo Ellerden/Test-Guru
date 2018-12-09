@@ -1,4 +1,29 @@
 <% if @tests.present? %>
-  <h1><%= t('.header') %></h1>
-  <%= render @tests %>
+  <div class="container">
+    <div class="row"> 
+      <div class="col-12">
+        <h1><%= t('.header') %></h1>
+      </div>
+    </div>
+      <div class="row">
+
+      <% @tests.each_slice(3) do |tests_group| %>
+        <% tests_group.each do |test| %>
+            <div class="col-sm-4">
+              <div class="card test-card" >
+                <h4><%= test.id %> - <%= test.title %> </h4>
+                <p><%= t('.category') %>: <%= test.category.title %></p>
+                <p><%= t('.level') %>: <%= test.level %> </p>
+                <p><%= t('.questions_number') %>: <%= test.questions.count %></p>
+                <% if test.questions.present? %>
+                  <div class="text-center">
+                    <%= button_to t('.start_test'), start_test_path(test), class: "btn btn-primary" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>          
+        <% end %>
+      <% end %>
+    </div> 
+  </div>
 <% end %>

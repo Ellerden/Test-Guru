@@ -1,16 +1,30 @@
-<%= answer_header(@answer) %>
-<%= answer_question_text(@answer) %>
-<%= form_with(model: [:admin, @question, @answer], local: true) do |f| %>
-  <p>
-    <%= f.label :text %>
-    <%= f.text_area :text, id: :text, rows: 7, cols: 60, placeholder: true  %>
-  </p>
-
-  <p>
-    <%= f.label :correct %>
-    <%= f.check_box :correct, id: :correct %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col col-6">
+      <%= answer_header(@answer) %>
+      <%= answer_question_text(@answer) %>
+    </div>
+  </div>
+  <%= form_with(model: [:admin, @question, @answer], local: true) do |f| %>
+    <div class="row">
+      <div class="col col-6">
+        <div class="form-group">
+          <p>
+            <%= f.label :text %>
+            <%= f.text_area :text, id: :text, rows: 7, cols: 60, placeholder: true  %>
+          </p>
+          <p>
+            <%= f.label :correct %>
+            <%= f.check_box :correct, id: :correct %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-12">
+        <%= f.submit class: "btn btn-primary" %>
+        <%= link_to t('.back'), admin_question_path(@answer.question), class: "nav-link" %> 
+      </div>
+    </div>
+  <% end %>
+</div>

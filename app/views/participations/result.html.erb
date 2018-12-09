@@ -1,10 +1,14 @@
 <% color = @participation.success? ? "success" : "fail" %>
-<h1><%= t('.header', title: @participation.test.title) %></h1>
-<% if @participation.success? %>
-  <h2><%= t('.congratulations') %></h2>
-<% else %>
-  <h2><%= t('.condolences') %></h2>
-<% end %>
-<h2 class="<%= color %>"><%= t('.result') %> <%= @participation.total_result %>%.</h2>
+<div class="container">
+  <h1><%= t('.header', title: @participation.test.title) %></h1>
+  <div class="text-center">  
+    <% if @participation.success? %>
+      <h3><%= t('.congratulations') %></h2>
+    <% else %>
+      <h3><%= t('.condolences') %></h2>
+    <% end %>
+    <h3 class="<%= color %>"><%= t('.result') %> <%= @participation.total_result %>%.</h3>
+    <%= render "linktests" %>
+  </div>
 
-<%= render "linktests" %>
+</div>

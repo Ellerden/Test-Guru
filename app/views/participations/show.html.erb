@@ -1,20 +1,20 @@
-<h1><%= t('.participation', test_title: @participation.test.title) %></h1>
-<p>
-  <%= t('.question', current_number: @participation.current_question_counter) %>
-  <%= t('.out_of', all_counter: @participation.test.questions.count) %>
-</p>
-<p><b> <%= @participation.current_question.text %></b></p>
-
-<%= form_with url: participation_path(@participation), local: true, method: :put do |f| %>
-  <%= f.collection_check_boxes :answer_ids, @participation.current_question.answers, :id, :text,  include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box%>
-      <%= b.label %>
-    </p>
+<div class="container">
+  <h1><%= t('.participation', test_title: @participation.test.title) %></h1>
+  <div class="status text-secondary">
+    <%= t('.question', current_number: @participation.current_question_counter) %>
+    <%= t('.out_of', all_counter: @participation.test.questions.count) %>
+  </div>
+  <p><b> <%= @participation.current_question.text %></b></p>
+  <div class="form-group">
+    <%= form_with url: participation_path(@participation), local: true, method: :put do |f| %>
+      <%= f.collection_check_boxes :answer_ids, @participation.current_question.answers, :id, :text,  include_hidden: false do |b| %>
+        <div class="form-check">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+      <%= f.submit t('.next'), class: 'btn btn-primary'%>
+    </div>
   <% end %>
-
-  <p>
-  <%= f.submit t('.next') %>
-  </p>
-<% end %>
-<%= render "linktests" %>
+  <%= render "linktests" %>
+</div>

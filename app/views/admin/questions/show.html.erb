@@ -1,10 +1,23 @@
-<h1> <%= t('.header', title: @question.test.title) %></h1>
-<h2>
-  <%= @question.text %>
-</h2>
-
-<ol>
-  <%= render @question.answers %>
-  <%= link_to t('.new_answer'), new_admin_question_answer_path(@question)%>
-</ol>
-<p><%= link_to t('.back'), admin_test_path(@question.test) %></p> 
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <h1> <%= t('.header', title: @question.test.title) %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <h2> <%= @question.text %> </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <%= render @question.answers %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <%= link_to t('.new_answer'), new_admin_question_answer_path(@question), class: "btn btn-primary" %>
+      <%= link_to t('.back'), admin_test_path(@question.test), class: "nav-link" %> 
+    </div>
+  </div>
+</div>

@@ -1,11 +1,31 @@
-<h2><%= test.id %> - <%= test.title %> </h2>
-<p><%= t('.category') %>: <%= test.category.title %></p>
-<p><%= t('.level') %>: <%= test.level %> </p>
-<p><%= t('.questions_number') %>: <%= test.questions.count %></p>
-<div>
-  <p>
-    <%= link_to t('.show'), admin_test_path(test) %>
-    <%= link_to t('.edit'), edit_admin_test_path(test) %>
-    <%= link_to t('.delete'), admin_test_path(test), method: :delete %>
-  </p>
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <h1><%= test.id %> - <%= test.title %></h1>
+    </div>
+      <div class="row">
+        <div class="col col-12">
+          <ul class="nav nav-tabs ">
+            <li class="nav-item">
+              <%= link_to t('.show'), admin_test_path(test), class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('.edit'), edit_admin_test_path(test), class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('.delete'), admin_test_path(test), method: :delete, class: 'nav-link' %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-sm-6">
+        <p><%= t('.category') %>: <%= test.category.title %></p>
+        <p><%= t('.level') %>: <%= test.level %> </p>
+        <p><%= t('.questions_number') %>: <%= test.questions.count %></p>
+      </div>  
+    </div> 
+  </div>
 </div>
+  

@@ -1,8 +1,0 @@
-<h2><%= test.id %> - <%= test.title %> </h2>
-<p><%= t('.category') %>: <%= test.category.title %></p>
-<p><%= t('.level') %>: <%= test.level %> </p>
-<p><%= t('.questions_number') %>: <%= test.questions.count %></p>
-<% if test.questions.present? %>
-  <p> <%= button_to t('.start_test') , start_test_path(test) %> </p>
-<% end %>
-<br>

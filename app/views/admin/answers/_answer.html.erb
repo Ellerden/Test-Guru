@@ -1,15 +1,20 @@
-<tr>
-  <td style="text-align: center">
-    <%= answer.correct %>
-  </td>
-  <td>
-    <%= answer.text %>
-  </td>
-  <td class="text-center"> 
-    <%= link_to t('.edit'), edit_admin_answer_path(answer) %> 
-  </td>
-  <td class="text-center"> 
-    <%= link_to t('.delete'), admin_answer_path(answer), method: :delete %> 
-  </td>
-</tr>
-</br>
+<div class="container">
+  <tr>
+    <td style="text-align: center">
+      <%= form_with(model: [:admin, answer], local: true) do |f| %>
+        <div class="form-check">
+          <%= f.label :correct, class: "form-check-label" do %>
+            <%= f.check_box :correct, class: "form-check-input" %>
+            <%= answer.text %>
+          <% end %>
+        </div>
+      <% end %>
+    </td>
+    <td class="text-center"> 
+      <%= link_to t('.edit'), edit_admin_answer_path(answer) %> 
+    </td>
+    <td class="text-center"> 
+      <%= link_to t('.delete'), admin_answer_path(answer), method: :delete %> 
+    </td>
+  </tr>
+</div>

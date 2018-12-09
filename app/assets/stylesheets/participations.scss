@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h2.success { 
+h3.success { 
   color: #36d13e;
 }
-h2.fail { 
+h3.fail { 
   color: #ff3e33;
+}
+
+.status {
+  margin-bottom: 5px;
 }
