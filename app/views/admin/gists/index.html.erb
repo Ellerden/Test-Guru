@@ -1,0 +1,18 @@
+<% if @gists.present? %>
+    <h2><%= t('.header') %></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%= t('.question') %></th>
+          <th scope="col"><%= t('.link') %></th>
+          <th scope="col"><%= t('.author') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @gists%>
+      </tbody>
+    </table>
+<% end %>
+<div class="row">
+  <%= link_to t('.back'), admin_tests_path, class: "nav-link" %>
+</div>

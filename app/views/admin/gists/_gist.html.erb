@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <a target="_blank" href="<%= admin_question_path(gist.question) %>"><%= gist.question.text.truncate(25) %></a>
+  </td>
+  <td>
+    <a target="_blank" href="<%= gist.gist_url %>">Gist URL</a>
+  </td>
+  <td>
+    <%= gist.user.email %>
+  </td>
+</tr>

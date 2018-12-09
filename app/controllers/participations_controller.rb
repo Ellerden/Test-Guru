@@ -18,22 +18,7 @@ class ParticipationsController < ApplicationController
       current_user.gists.create(question: @participation.current_question,
                                 gist_url: result.html_url)
 
-
-    #  redirect_to @participation, notice: t('.success', url: result.html_url)
     redirect_to @participation, notice: t('.success', url: result.html_url)
-    #  redirect_to @participation, { notice: t('.success'), flash: { gist_hash: result.gist_hash } }
-     # redirect_to @participation, { notice: t('.success') }
-    #respond_to do |format|
-   #   format.html { redirect_to @participation, notice: "D: #{view_context.link_to 'g', result.gist_hash }".html_safe }
-   # end
-
-      #{view_context.link_to('reset it', result.gist_hash )}".html_safe
-     # redirect_to @participation, notice: "Go to your #{view_context.link_to("profile page", result.gist_hash)}, and edit it!".html_safe
-
-     # notice: t('.success', view_context.link_to(result.gist_hash))
-      #redirect_to @participation
-    #  flash[:notice] = "Go to your #{view_context.link_to("profile page", link_path)}, and edit it!".html_safe
-     # redirect_to @participation, { notice: t('.success') }#  #link: link_to(result.gist_hash)).html_safe }
   end
 
   def update
