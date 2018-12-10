@@ -11,6 +11,8 @@ gem 'rails_12factor', group: :production
 # and dotenv-rails gem helps us with this.
 gem 'dotenv-rails'
 
+gem 'thin'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
@@ -54,6 +56,7 @@ gem 'jquery-rails'
 gem 'faraday'
 
 gem 'octokit', '~> 4.0'
+gem 'sawyer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

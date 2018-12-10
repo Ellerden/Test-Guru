@@ -1,9 +1,9 @@
 <tr>
   <td>
-    <a target="_blank" href="<%= admin_question_path(gist.question) %>"><%= gist.question.text.truncate(25) %></a>
+    <%= link_to gist.question.text.truncate(25), admin_question_path(gist.question), target: :blank %>
   </td>
   <td>
-    <a target="_blank" href="<%= gist.gist_url %>">Gist URL</a>
+    <%= link_to 'Gist URL', gist.gist_url, target: :blank %>
   </td>
   <td>
     <%= gist.user.email %>

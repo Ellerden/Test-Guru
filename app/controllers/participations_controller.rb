@@ -11,14 +11,19 @@ class ParticipationsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@participation.current_question).call
-    rescue Octokit::Error
-      redirect_to @participation, alert: t('.fail')
-    else
-      current_user.gists.create(question: @participation.current_question,
-                                gist_url: result.html_url)
+    result = GistQuestionService.new(@participation.current_question)
+    result.call
 
-    redirect_to @participation, notice: t('.success', url: result.html_url)
+    flash_options = if result.success?
+      current_user.gists.create(question: @participation.current_question,
+                                gist_url: result.gist.html_url)
+
+      { notice: t('.success', url: result.gist.html_url) }
+    else
+      { alert: t('.fail') }
+    end
+
+    redirect_to @participation, flash_options
   end
 
   def update
