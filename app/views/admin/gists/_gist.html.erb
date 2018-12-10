@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= link_to gist.question.text.truncate(25), admin_question_path(gist.question), target: :blank %>
+    <%= link_to truncate(gist.question.text, length: 25), admin_question_path(gist.question), target: :blank %>
   </td>
   <td>
     <%= link_to 'Gist URL', gist.gist_url, target: :blank %>
