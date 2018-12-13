@@ -3,7 +3,7 @@
     <%= link_to truncate(gist.question.text, length: 25), admin_question_path(gist.question), target: :blank %>
   </td>
   <td>
-    <%= link_to 'Gist URL', gist.gist_url, target: :blank %>
+    <%= link_to gist.gist_hash, gist.gist_url, target: :blank %>
   </td>
   <td>
     <%= gist.user.email %>

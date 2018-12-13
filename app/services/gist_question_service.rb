@@ -1,18 +1,19 @@
 class GistQuestionService
-  attr_reader :gist
+  ResultGist = Struct.new(:success?, :gist_hash, :gist_url)
 
-  def initialize(question, client: nil)
+  def initialize(question, client: default_client)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
+    @client = client
   end
 
   def call
-    @gist = @client.create_gist(gist_params)
+    gist = @client.create_gist(gist_params)
+    ResultGist.new(gist.html_url.present?, gist.id, gist.html_url)
   end
 
-  def success?
-    @gist.html_url.present?
+  def default_client
+    Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
   end
 
   private

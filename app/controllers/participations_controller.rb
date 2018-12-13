@@ -11,14 +11,14 @@ class ParticipationsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@participation.current_question)
-    result.call
+    result = GistQuestionService.new(@participation.current_question).call
 
     flash_options = if result.success?
       current_user.gists.create(question: @participation.current_question,
-                                gist_url: result.gist.html_url)
+                                gist_hash: result.gist_hash,
+                                gist_url: result.gist_url)
 
-      { notice: t('.success', url: result.gist.html_url) }
+      { notice: t('.success', url: result.gist_url) }
     else
       { alert: t('.fail') }
     end

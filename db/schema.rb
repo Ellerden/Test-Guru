@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_133816) do
+ActiveRecord::Schema.define(version: 2018_12_13_143404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_133816) do
   create_table "gists", force: :cascade do |t|
     t.bigint "question_id", null: false
     t.bigint "user_id", null: false
+    t.string "gist_hash", null: false
     t.string "gist_url", null: false
     t.index ["question_id"], name: "index_gists_on_question_id"
     t.index ["user_id"], name: "index_gists_on_user_id"
