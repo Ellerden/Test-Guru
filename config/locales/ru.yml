@@ -185,6 +185,14 @@ ru:
       welcome: "Добро пожаловать"
       logout: "Выйти"
 
+    gists:
+      index:
+        header: "Сохраненные в Gist вопросы"
+        question: "Вопросы"
+        link: "Ссылка на git"
+        author: "Автор"
+        back: "Назад"
+
   tests:
     index:
       header: "Все тесты"
@@ -211,6 +219,10 @@ ru:
       question: "Вопрос %{current_number}"
       out_of: "из %{all_counter}"
       next: "Дальше"
+      gist_question: "Добавить в Gist"
+    gist:
+      success: "Вопрос успешно <a href=\"%{url}\" target=\"_blank\">отправлен</a> в Gist"
+      fail: "Во время отправки вопроса в Gist произошла ошибка"
 
   sessions:
     create:
@@ -236,3 +248,7 @@ ru:
         no_confirm_instructions: "Не получили письмо подтверждения?"
         no_unlock_instructions: "Не получили письмо о разблокировке?"
         omni_auth: "Войти с %{links}"
+
+  services:
+    gist_question_service:
+      gist_description: "Вопрос из теста \"%{test_title}\" с портала TestGuru"

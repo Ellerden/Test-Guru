@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 class Participation < ApplicationRecord
-
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
-  
+
   validates :user, :test, presence: true
 
   before_validation :before_validation_set_first_question, on: :create

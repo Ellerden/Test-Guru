@@ -32,6 +32,8 @@
 en:
   hello: "Hello, world"
 
+  gist_description: "A question about \"%{test_title}\" from TestGuru"
+
   helpers:
     label:
       test:
@@ -175,6 +177,14 @@ en:
       destroy:
         success: "Category was successfully deleted!"
 
+    gists:
+      index:
+        header: "Questions saved to gist"
+        question: "Questions"
+        link: "Git link"
+        author: "Author"
+        back: "Back"
+
     nav:
       admin_panel_title: "Admin panel Test Guru"
       welcome: "Welcome"
@@ -206,6 +216,10 @@ en:
       question: "Question %{current_number}"
       out_of: "out of %{all_counter}"
       next: "Next"
+      gist_question: "Save to Gist"
+    gist:
+      success: "Question was successfully <a target=\"_blank\" href=\"%{url}\">saved</a>"
+      fail: "Something went wrong while saving Gist"
 
   sessions:
     create:
