@@ -90,12 +90,16 @@ en:
       update:
         success: "Test was successfully updated!"
         header: "Create test %{title}"
+      update_inline:
+        success: "Test title was successfully changed!"
       destroy:
         success: "Test was successfully deleted!"
       form:
         new_test: "New test"
         edit_test: "Edit test \"%{title}\""
-        back: "Назад"
+        back: "Back"
+      form_inline:
+        submit: "OK"
       test:
         show: "Show"
         edit: "Edit"

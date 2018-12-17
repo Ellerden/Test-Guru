@@ -10,6 +10,9 @@
       </div>
   </div>
 </div>
+
+<%= render 'shared/errors', resource: @test %>
+
 <% if @tests.present? %>
   <div class="row">
     <% @tests.each_slice(3) do |two_tests| %>
@@ -22,7 +25,10 @@
                     <%= link_to t('.show'), admin_test_path(test), class: 'nav-link' %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to t('.edit'), edit_admin_test_path(test), class: 'nav-link' %>
+                    <%= link_to t('.edit'), 
+                                edit_admin_test_path(test), 
+                                data: { test_id: test.id }, 
+                                class: 'nav-link form-inline-link' %>
                   </li>
                   <li class="nav-item">
                     <%= link_to t('.delete'), admin_test_path(test), method: :delete, class: 'nav-link' %>
@@ -30,7 +36,10 @@
                 </ul>
               </div>
               <div class="card-body">
-                <h5 class="card-title"><%= test.id %> - <%= test.title %></h5>
+                <%= content_tag :span, test.title, class: 'card-title test-title', data: { test_id: test.id } %>
+
+                <p><%= render 'form_inline', test: test == @test ? @test : test %></p>
+
                 <p><%= t('.category') %>: <%= test.category.title %></p>
                 <p><%= t('.level') %>: <%= test.level %> </p>
                 <p><%= t('.questions_number') %>: <%= test.questions.count %></p>
