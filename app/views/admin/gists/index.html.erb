@@ -3,7 +3,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col"><%= t('.question') %></th>
+          <th scope="col" class="sort-by-title pointer">
+            <%= t('.question') %>
+            <%= octicon 'arrow-up', class: "text-success hide" %>
+            <%= octicon 'arrow-down', class: "text-success hide" %>
+          </th>
           <th scope="col"><%= t('.link') %></th>
           <th scope="col"><%= t('.author') %></th>
         </tr>

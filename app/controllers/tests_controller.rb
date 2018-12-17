@@ -3,9 +3,12 @@
 class TestsController < ApplicationController
   before_action :find_test, only: %i[start]
   before_action :set_questions, only: %i[start]
+  before_action :set_tests, only: %i[index table]
 
   def index
-    @tests = Test.all
+  end
+
+  def table
   end
 
   def start
@@ -21,5 +24,9 @@ class TestsController < ApplicationController
 
   def set_questions
     @questions = @test.questions
+  end
+
+  def set_tests
+    @tests = Test.all
   end
 end

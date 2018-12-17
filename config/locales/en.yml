@@ -192,6 +192,7 @@ en:
 
   tests:
     index:
+      to_table: "Show in table"
       header: "All tests"
       start_test: "Start test"
       category: "Category"
@@ -202,6 +203,15 @@ en:
       level: "Level"
       questions_number: "Number of questions"
       start_test: "Start test"
+    table:
+      to_div: "Show in blocks"
+      header: "All tests"
+      start_test: "Start test"
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      questions_number: "Number of questions"
+      action: "Action"
 
   participations:
     linktests:

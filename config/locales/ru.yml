@@ -195,6 +195,7 @@ ru:
 
   tests:
     index:
+      to_table: "Посмотреть в таблице"
       header: "Все тесты"
       start_test: "Пройти тест"
       category: "Категория"
@@ -205,6 +206,15 @@ ru:
       level: "Уровень"
       questions_number: "Кол-во вопросов"
       start_test: "Пройти тест"
+    table:
+      to_div: "Посмотреть в сетке"
+      header: "Все тесты"
+      start_test: "Пройти тест"
+      title: "Название"
+      category: "Категория"
+      level: "Уровень"
+      questions_number: "Кол-во вопросов"
+      action: "Действие"
 
   participations:
     linktests:

@@ -13,6 +13,10 @@ Rails.application.routes.draw do
       resources :answers, shallow: true
     end
 
+    collection do
+      get :table
+    end
+
     member do
       post :start
     end
