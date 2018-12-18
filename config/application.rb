@@ -14,6 +14,9 @@ module TestGuru
     config.load_defaults 5.2
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
+    config.assets.enabled = true
+    config.serve_static_assets = true
+    config.assets.compile = false
 
     #config.autoload_paths << "#{Rails.root}/lib/clients"
 
