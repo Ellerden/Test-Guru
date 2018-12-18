@@ -31,6 +31,10 @@ class Participation < ApplicationRecord
     ((correct_questions.to_f / test.questions.size) * 100).round(2)
   end
 
+  def progress
+    (100 * current_question_counter) / test.questions.size
+  end
+
   private
 
   def before_validation_set_first_question

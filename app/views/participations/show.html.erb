@@ -1,9 +1,14 @@
 <div class="container">
   <h1><%= t('.participation', test_title: @participation.test.title) %></h1>
+  <div>
+     <%= render 'progress_bar' %>
+  </div>
+ 
   <div class="status text-secondary">
     <%= t('.question', current_number: @participation.current_question_counter) %>
     <%= t('.out_of', all_counter: @participation.test.questions.count) %>
   </div>
+  
   <p><b> <%= @participation.current_question.text %></b></p>
   <div class="form-group">
     <%= form_with url: participation_path(@participation), local: true, method: :put do |f| %>

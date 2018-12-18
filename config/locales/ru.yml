@@ -87,18 +87,23 @@ ru:
         questions_number: "Кол-во вопросов"
         show: "Показать"
         edit: "Изменить"
+        cancel: "Отмена"
         delete: "Удалить"
       create:
         success: "Тест успешно создан!"
       update:
         success: "Тест успешно обновлен!"
         header: "Создать тест %{title}"
+      update_inline:
+        success: "Название теста успешно изменено!"
       destroy:
         success: "Тест успешно удален!"
       form:
         new_test: "Новый тест"
         edit_test: "Редактировать тест \"%{title}\""
         back: "Назад"
+      form_inline:
+        submit: "ОК"
       test:
         show: "Показать"
         edit: "Изменить"

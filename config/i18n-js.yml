@@ -1,0 +1,5 @@
+translations:
+  file: "assets/javascripts/publis/en.js"
+  only: '*'
+  file: "assets/javascripts/publis/ru.js"
+  only: '*'
