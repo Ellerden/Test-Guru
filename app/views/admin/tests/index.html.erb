@@ -36,9 +36,9 @@
                 </ul>
               </div>
               <div class="card-body">
-                <%= content_tag :span, test.title, class: 'card-title test-title', data: { test_id: test.id } %>
+                <%= content_tag :h4, test.title, class: 'card-title test-title', data: { test_id: test.id } %>
 
-                <p><%= render 'form_inline', test: test == @test ? @test : test %></p>
+                <%= render 'form_inline', test: test == @test ? @test : test %>
 
                 <p><%= t('.category') %>: <%= test.category.title %></p>
                 <p><%= t('.level') %>: <%= test.level %> </p>
