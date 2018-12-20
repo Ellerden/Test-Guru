@@ -45,6 +45,11 @@ ru:
         text: "Текст ответа"
         correct: "Правильность"
         question_id: "Вопрос"
+      message:
+        name: 'Ваше имя'
+        email: 'Ваш email'
+        body: 'Сообщение'
+
     placeholder: 
       test:
         title: "Введите название теста"
@@ -52,6 +57,10 @@ ru:
         text: "Введите текст ответа"
       question:
         text: "Введите текст вопроса"
+      message:
+        author_name: 'Ваше имя'
+        author_email: 'Ваш email'
+        body: "Введите ваше сообщение"
     select:
         prompt: "Выберите категорию"
 
@@ -63,18 +72,27 @@ ru:
         one: "%{count} ошибка"
         other: "%{count} ошибки"
     footer:
-      copyright: "(c) Дарья Щеглова - проект Test Guru"
+      copyright: "(c) Дарья Щеглова. Страница проекта на "
       about_project: "Конструктор тестов – учебный проект в онлайн-школе"
+      feedback: 'Напишите нам'
     nav:
       welcome: "Добро пожаловать"
       login: "Войти"
       logout: "Выйти" 
       signup: "Зарегистрироваться"
-      admin_panel_title: "Панель администратора Test Guru"
+      admin_panel_title: "Панель администратора Test Meister"
 
   test_mailer:
     completed_test:
-      subject: "Вы прошли тест на портале TestGuru"
+      subject: "Вы прошли тест на портале TestMeister"
+
+  messages:
+    create:
+      success: 'Ваше сообщение успешно отправлено. Мы обязательно вам ответим!'
+      fail: 'Что-то пошло не так. Попробуйте еще раз.'
+    form:
+      contact_us: 'О чем вы хотите нам рассказать?'
+      back: 'Назад'
 
   admin:
     tests:
@@ -186,7 +204,7 @@ ru:
         success: "Категория успешно удалена!"
 
     nav:
-      admin_panel_title: "Панель администратора Test Guru"
+      admin_panel_title: "Панель администратора Test Meister"
       welcome: "Добро пожаловать"
       logout: "Выйти"
 
@@ -266,4 +284,4 @@ ru:
 
   services:
     gist_question_service:
-      gist_description: "Вопрос из теста \"%{test_title}\" с портала TestGuru"
+      gist_description: "Вопрос из теста \"%{test_title}\" с портала TestMeister"
