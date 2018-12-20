@@ -15,6 +15,13 @@ categories = Category.create!([{ title: 'Computer Science' },
                                { title: 'Кинематограф' },
                                { title: 'Разное' }])
 
+users = User.create!([{ name: 'Иван', username: 'ivan1', password: '123456',
+                        email: 'ivan@ivan.ru', role: 'admin' },
+                      { name: 'Петр', username: 'petr1', password: 'qwerty',
+                        email: 'petr@petya.com', role: 'user' },
+                      { name: 'Иван Петров', username: 'ivpet', password: '123qwe',
+                        email: 'petrushka@mail.com', role: 'user' }])
+
 tests = Test.create!([{ title: 'Кто что снял?', level: 2, category: categories[4],
                         author: users[0] },
                       { title: 'Как хорошо вы знаете Ruby?', level: 3, category: categories[0],
