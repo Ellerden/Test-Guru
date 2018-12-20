@@ -3,6 +3,6 @@ class MessageMailer < ApplicationMailer
     @author = message.author_name
     @author_email = message.author_email
     @text = message.body
-    mail to: ENV['FEEDBACK_EMAIL']
+    mail to: Admin.first.email
   end
 end
