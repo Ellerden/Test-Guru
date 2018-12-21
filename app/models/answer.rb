@@ -6,13 +6,17 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   validates :text, presence: true
-  validate :validate_answers_length, on: create
+  validate :validate_answers_length, on: :create
+
+  def maximum?
+    question.answers.size > 4
+  end
 
   private
 
   def validate_answers_length
-    return if question.answers.count < 4
-
-    error.add(:answers, 'There should be between 1 and 4 answers')
+    errors.add(:base, I18n.t('errors.max_answers')) if self.maximum?
   end
+
+
 end

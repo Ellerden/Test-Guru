@@ -3,7 +3,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.0'
+ruby '2.5.3'
+
+gem 'i18n-js', '~>3.2.0'
+
 # Use postgreSQL as the database for Active Record
 gem 'pg'
 gem 'rails_12factor', group: :production
@@ -55,8 +58,6 @@ gem 'faraday'
 
 gem 'octokit', '~> 4.0'
 gem 'octicons_helper'
-
-gem 'i18n-js'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

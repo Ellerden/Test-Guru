@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
-  var control = document.getElementById('progress-bar')
+  var control = document.getElementById('progress-bar');
   if (control) {
     showCurrentProgress(control);
   }

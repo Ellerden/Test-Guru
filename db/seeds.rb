@@ -12,7 +12,8 @@ categories = Category.create!([{ title: 'Computer Science' },
                                { title: 'AI' },
                                { title: 'История' },
                                { title: 'Динозавры' },
-                               { title: 'Кинематограф' }])
+                               { title: 'Кинематограф' },
+                               { title: 'Разное' }])
 
 users = User.create!([{ name: 'Иван', username: 'ivan1', password: '123456',
                         email: 'ivan@ivan.ru', role: 'admin' },
@@ -46,10 +47,3 @@ answers = Answer.create!([{ text: 'Да', correct: true, question: questions[0] 
                           { text: 'Методы c ! выполняют постоянное или потенциально опасное изменение',
                             correct: true, question: questions[3] },
                           { text: '! ничего не говорит о работе методов', question: questions[3] }])
-
-Participation.create!([{ user: users[0], test: tests[0] },
-                       { user: users[0], test: tests[1] },
-                       { user: users[1], test: tests[1] },
-                       { user: users[2], test: tests[0] },
-                       { user: users[2], test: tests[1] },
-                       { user: users[2], test: tests[2] }])

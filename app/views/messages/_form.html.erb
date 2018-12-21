@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="col col-md-6">
+    <h1><%= t('.contact_us') %></h1>
+    
+    <%= form_with(model: @message, local: true) do |f| %>
+      <div class="form-group">
+        <p>
+          <%= f.label :name%>
+          <%= f.text_field :author_name, placeholder: true, class: "form-control" %>
+        </p>
+        <p>
+          <%= f.label :email%>
+          <%= f.text_field :author_email, placeholder: true, class: "form-control" %>
+        </p>
+
+        <p>
+          <%= f.label :body %>
+          <%= f.text_field :body, placeholder: true, class: "form-control" %>
+        </p>
+
+        <div class="row">
+          <div class="col col-md-6">
+            <%= f.submit class: "btn btn-primary" %>
+            <%= link_to t('.back'), tests_path, class: "nav-link" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

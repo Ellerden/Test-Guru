@@ -32,8 +32,6 @@
 en:
   hello: "Hello, world"
 
-  gist_description: "A question about \"%{test_title}\" from TestGuru"
-
   helpers:
     label:
       test:
@@ -47,6 +45,11 @@ en:
         text: "Answer's text"
         correct: "Correct"
         question_id: "Question"
+      message:
+        name: 'Your name'
+        email: 'Your email'
+        body: 'Message'
+
     placeholder: 
       test:
         title: "Write your test title"
@@ -54,8 +57,15 @@ en:
         text: "Write your answer"
       question:
         text: "Write your question"
+      message:
+        author_name: 'Your name'
+        author_email: 'Your email'
+        body: "Write your message"
     select:
         prompt: "Select the category"
+
+  errors:
+    max_answers: "You cannot add more than 4 answers"
 
   shared:
     errors:
@@ -63,18 +73,27 @@ en:
         one: "%{count} error"
         other: "%{count} errors"
     footer:
-      copyright: "(c) Daria Shcheglove - project Test Guru"
+      copyright: "(c) Daria Shcheglove. Project page on "
       about_project: "Test constructor was created as a school-project at the online-school"
+      feedback: "Contact us"
     nav:
       welcome: "Welcome"
       login: "Log in"
       logout: "Log out" 
       signup: "Sign up"
-      admin_panel_title: "Admin Panel Test Guru"
+      admin_panel_title: "Admin Panel Test Meister"
+
+  messages:
+    create:
+      success: 'Your message was sent. We will be in touch soon!'
+      fail: 'Something went wrong. Please try again.'
+    form:
+      contact_us: 'What do you want to tell us?'
+      back: 'Back'
 
   test_mailer:
     completed_test:
-      subject: "You've finished the test on TestGuru"
+      subject: "You've finished the test on TestMeister"
 
   admin:
     tests:
@@ -142,6 +161,7 @@ en:
       show:
         header: "Question of the test \"%{title}\""
         new_answer: "Create new answer"
+        max_answers_info: "You can add max 4 answers" 
         back: "Back"
       index:
         header: "Test's questions:"
@@ -190,7 +210,7 @@ en:
         back: "Back"
 
     nav:
-      admin_panel_title: "Admin panel Test Guru"
+      admin_panel_title: "Admin panel Test Meister"
       welcome: "Welcome"
       logout: "Log out"
 
