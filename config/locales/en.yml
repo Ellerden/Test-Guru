@@ -64,6 +64,9 @@ en:
     select:
         prompt: "Select the category"
 
+  errors:
+    max_answers: "You cannot add more than 4 answers"
+
   shared:
     errors:
       header:
@@ -158,6 +161,7 @@ en:
       show:
         header: "Question of the test \"%{title}\""
         new_answer: "Create new answer"
+        max_answers_info: "You can add max 4 answers" 
         back: "Back"
       index:
         header: "Test's questions:"

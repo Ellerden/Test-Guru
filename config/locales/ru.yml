@@ -64,6 +64,9 @@ ru:
     select:
         prompt: "Выберите категорию"
 
+  errors:
+    max_answers: "Вы не можете добавить больше 4-х ответов"
+
   shared:
     errors:
       header:
@@ -148,7 +151,7 @@ ru:
         success: "Вопрос успешно удален!"
       show:
         not_found: "Вопрос не найден"
-        back: "Назад"    
+        back: "Назад"   
       question:
         show_answers: "Показать ответы"
         edit: "Изменить"
@@ -164,6 +167,7 @@ ru:
       show:
         header: "Вопрос теста \"%{title}\""
         new_answer: "Создать новый ответ"
+        max_answers_info: "Вы можете добавить максимум 4 ответа" 
         back: "Назад"
       index:
         header: "Вопросы теста:"
