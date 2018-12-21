@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :sessions, only: :create
 
   get 'contact_us', to: 'messages#new'
-  post 'messages', to: 'messages#create'
+  resources :messages, only: :create
 
   resources :tests, only: :index do
     resources :questions, shallow: true, only: :show do

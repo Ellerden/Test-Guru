@@ -3,7 +3,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.assets.compile = false
+  config.assets.compile = true
   #config.assets.initialize_on_precompile = false
 
   config.action_mailer.perform_caching = false
