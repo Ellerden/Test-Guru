@@ -64,9 +64,6 @@ ru:
     select:
         prompt: "Выберите категорию"
 
-  errors:
-    max_answers: "Вы не можете добавить больше 4-х ответов"
-
   shared:
     errors:
       header:

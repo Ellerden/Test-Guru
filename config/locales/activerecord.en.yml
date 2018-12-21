@@ -49,6 +49,19 @@ en:
         email: "E-mail"
         password: "Password"
         password_confirmation: "Password confirmation"
+
+    errors:
+      models:
+        answer:
+          attributes:
+            base:
+              max_answers: "You cannot add more than 4 answers"
+
+  helpers:
+    submit:
+      create: "Submit"
+      update: "Save"
+
   errors:
     # The default format to use in full error messages.
     format: "%{attribute} %{message}"

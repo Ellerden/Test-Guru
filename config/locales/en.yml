@@ -64,9 +64,6 @@ en:
     select:
         prompt: "Select the category"
 
-  errors:
-    max_answers: "You cannot add more than 4 answers"
-
   shared:
     errors:
       header:
