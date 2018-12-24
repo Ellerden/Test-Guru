@@ -1,0 +1,4 @@
+<% if @participation.test.recommended_time %>
+  <div class="user-timer" id="countdown" data-hours="<%= @participation.test.hours_to_pass_test %>" data-minutes="<%= @participation.test.minutes_to_pass_test %>" data-test_id="<%= @participation.id %>">
+  </div>
+<% end %>
