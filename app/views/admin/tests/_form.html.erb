@@ -22,7 +22,7 @@
           <input type="checkbox" class="form-check-input" id="add-time">
           <fieldset disabled class="time-selector">
             <label class="form-check-label text-muted" id="label-add-time">
-              Тест на время
+              <%= t('.test_with_time')%>
             </label>
             <%= f.time_select :recommended_time, { default: {hour: '00', minute: '00'}, minute_step: 5} %>
           </fieldset>

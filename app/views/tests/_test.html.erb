@@ -3,6 +3,7 @@
   <td><%= test.category.title %></td>
   <td><%= test.level %></td>
   <td><%= test.questions.count %></td>
+  <td><% if test.recommended_time %> <%= test.time %> <% end %> </td>
   <td>
     <%= button_to t('.start_test'), start_test_path(test), class: "btn btn-primary" %>
   </td>

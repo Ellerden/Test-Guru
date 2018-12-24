@@ -103,6 +103,7 @@ ru:
         category: "Категория"
         level: "Уровень"
         questions_number: "Кол-во вопросов"
+        recommended_time: "Время прохождения"
         show: "Показать"
         edit: "Изменить"
         cancel: "Отмена"
@@ -119,6 +120,7 @@ ru:
       form:
         new_test: "Новый тест"
         edit_test: "Редактировать тест \"%{title}\""
+        test_with_time: "Тест на время"
         back: "Назад"
       form_inline:
         submit: "ОК"
@@ -225,10 +227,12 @@ ru:
       category: "Категория"
       level: "Уровень"
       questions_number: "Кол-во вопросов"
+      recommended_time: "Время прохождения"
     test:
       category: "Категория"
       level: "Уровень"
       questions_number: "Кол-во вопросов"
+      recommended_time: "Время прохождения"
       start_test: "Пройти тест"
     table:
       to_div: "Посмотреть в сетке"
@@ -238,6 +242,7 @@ ru:
       category: "Категория"
       level: "Уровень"
       questions_number: "Кол-во вопросов"
+      recommended_time: "Время прохождения"
       action: "Действие"
 
   participations:

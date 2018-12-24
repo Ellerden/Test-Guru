@@ -101,6 +101,7 @@ en:
         category: "Category"
         level: "Level"
         questions_number: "Number of questions"
+        recommended_time: "Time to pass"
       create:
         success: "Test was successfully created!"
       update:
@@ -113,6 +114,7 @@ en:
       form:
         new_test: "New test"
         edit_test: "Edit test \"%{title}\""
+        test_with_time: "Test with time"
         back: "Back"
       form_inline:
         submit: "OK"
@@ -219,10 +221,12 @@ en:
       category: "Category"
       level: "Level"
       questions_number: "Number of questions"
+      recommended_time: "Time to pass"
     test:
       category: "Category"
       level: "Level"
       questions_number: "Number of questions"
+      recommended_time: "Time to pass"
       start_test: "Start test"
     table:
       to_div: "Show in blocks"
@@ -232,6 +236,7 @@ en:
       category: "Category"
       level: "Level"
       questions_number: "Number of questions"
+      recommended_time: "Time to pass"
       action: "Action"
 
   participations:
