@@ -1,12 +1,17 @@
 <div class="container">
   <h1><%= t('.participation', test_title: @participation.test.title) %></h1>
+  
   <div>
      <%= render 'progress_bar' %>
   </div>
- 
   <div class="status text-secondary">
     <%= t('.question', current_number: @participation.current_question_counter) %>
     <%= t('.out_of', all_counter: @participation.test.questions.count) %>
+  </div>
+  <div>
+    <h2 class="text-center">
+     <%= render 'timer' %>
+   </h2>
   </div>
   
   <p><b> <%= @participation.current_question.text %></b></p>
@@ -19,7 +24,7 @@
         </div>
       <% end %>
       <%= link_to t('.gist_question'), gist_participation_path(@participation), method: :post, class: 'btn btn-warning' %>
-      <%= f.submit t('.next'), class: 'btn btn-primary'%>
+      <%= f.submit t('.next'), class: 'btn btn-primary' %>
     </div>
   <% end %>
   <%= render "linktests" %>

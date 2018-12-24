@@ -18,6 +18,9 @@
                 <p><%= t('.category') %>: <%= test.category.title %></p>
                 <p><%= t('.level') %>: <%= test.level %> </p>
                 <p><%= t('.questions_number') %>: <%= test.questions.count %></p>
+                <% if test.recommended_time %>
+                <p><%= t('.recommended_time') %>: <%= test.time %></p>
+                <% end %>
                 <% if test.questions.present? %>
                   <div class="text-center">
                     <%= button_to t('.start_test'), start_test_path(test), class: "btn btn-primary" %>

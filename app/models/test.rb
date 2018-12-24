@@ -20,13 +20,24 @@ class Test < ApplicationRecord
                                     greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
 
-
 # Использовать тут скоуп by_category?
   def self.by_category_title(category)
      self.by_category.order(title: :desc).pluck(:title)
   end
-  
+
   def self.by_category(category)
     Test.joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
+  end
+
+  def hours_to_pass_test
+    self.recommended_time.strftime("%H").to_i
+  end
+
+  def minutes_to_pass_test
+    self.recommended_time.strftime("%M").to_i
+  end
+
+  def time
+    self.recommended_time.strftime("%H:%M")
   end
 end
