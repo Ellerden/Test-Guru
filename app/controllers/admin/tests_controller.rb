@@ -34,7 +34,7 @@ class Admin::TestsController < Admin::BaseController
   # тест добавляется текущему админу как автору
   def create
     @test = current_user.created_tests.build(test_params)
-   # @test.recommended_time = @test.recommended_time.in_time_zone('UTC')
+
     if @test.save
       redirect_to admin_test_path(@test), notice: t('.success')
     else
@@ -62,6 +62,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :recommended_time)
+    params.require(:test).permit(:title, :level, :category_id, :time_to_pass)
   end
 end

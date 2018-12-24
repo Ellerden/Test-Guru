@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
+  attribute :time_to_pass, SecondsType.new
+
   has_many :participations, dependent: :destroy
   has_many :users, through: :participations, dependent: :destroy
   has_many :questions, dependent: :destroy
@@ -29,15 +31,13 @@ class Test < ApplicationRecord
     Test.joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
   end
 
-  def hours_to_pass_test
-    self.recommended_time.strftime("%H").to_i
-  end
+  # def time_in_sec
+  #   self.time.strftime("%H").to_i * 60 + self.time.strftime("%M").to_i * 60
+  # end
 
-  def minutes_to_pass_test
-    self.recommended_time.strftime("%M").to_i
+  def time_hours_minutes
+    self.time_to_pass
   end
-
-  def time
-    self.recommended_time.strftime("%H:%M")
-  end
+  #   self.time.strftime("%H:%M")
+  # end
 end

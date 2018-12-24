@@ -43,8 +43,8 @@
                 <p><%= t('.category') %>: <%= test.category.title %></p>
                 <p><%= t('.level') %>: <%= test.level %> </p>
                 <p><%= t('.questions_number') %>: <%= test.questions.count %></p>
-                <% if test.recommended_time %> 
-                  <p><%= t('.recommended_time') %>: <%= test.time %></p>
+                <% if test.time_to_pass %> 
+                  <p><%= t('.time') %>: <%= test.time_to_pass %></p>
                 <% end %>
               </div>
             </div>

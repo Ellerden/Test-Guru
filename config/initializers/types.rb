@@ -1,0 +1,1 @@
+ActiveModel::Type.register(:seconds, SecondsType)
