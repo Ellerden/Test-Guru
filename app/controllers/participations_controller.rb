@@ -2,7 +2,8 @@
 
 class ParticipationsController < ApplicationController
   before_action :find_participation, only: %i[show update result gist]
-  before_action :set_test, only: %i[show update result]
+  before_action :set_test, only: %i[show update result check_time]
+  before_action :check_time, only: :update
 
   def show
   end
@@ -33,6 +34,13 @@ class ParticipationsController < ApplicationController
       redirect_to result_participation_path(@participation)
     else
       render :show
+    end
+  end
+
+  def check_time
+  # if (Time.now - @participation.created_at) >= @test.time_to_pass
+    if (Time.now - @participation.created_at) >= @test.time_to_pass
+      redirect_to result_participation_path(@participation), alert: t('.no_time_left')
     end
   end
 

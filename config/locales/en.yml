@@ -101,7 +101,8 @@ en:
         category: "Category"
         level: "Level"
         questions_number: "Number of questions"
-        recommended_time: "Time to pass"
+        time: "Time to pass"
+        seconds: "s."
       create:
         success: "Test was successfully created!"
       update:
@@ -221,7 +222,8 @@ en:
       category: "Category"
       level: "Level"
       questions_number: "Number of questions"
-      recommended_time: "Time to pass"
+      time: "Time to pass"
+      seconds: "s."
     test:
       category: "Category"
       level: "Level"
@@ -236,7 +238,8 @@ en:
       category: "Category"
       level: "Level"
       questions_number: "Number of questions"
-      recommended_time: "Time to pass"
+      time: "Time to pass"
+      seconds: "s."
       action: "Action"
 
   participations:

@@ -30,14 +30,4 @@ class Test < ApplicationRecord
   def self.by_category(category)
     Test.joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
   end
-
-  # def time_in_sec
-  #   self.time.strftime("%H").to_i * 60 + self.time.strftime("%M").to_i * 60
-  # end
-
-  def time_hours_minutes
-    self.time_to_pass
-  end
-  #   self.time.strftime("%H:%M")
-  # end
 end

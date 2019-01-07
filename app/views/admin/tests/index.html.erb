@@ -44,7 +44,7 @@
                 <p><%= t('.level') %>: <%= test.level %> </p>
                 <p><%= t('.questions_number') %>: <%= test.questions.count %></p>
                 <% if test.time_to_pass %> 
-                  <p><%= t('.time') %>: <%= test.time_to_pass %></p>
+                  <p><%= t('.time') %>: <%= test.time_to_pass %> <%= t('.seconds') %></p>
                 <% end %>
               </div>
             </div>

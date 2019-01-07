@@ -1,6 +1,6 @@
- var timer;
 document.addEventListener('turbolinks:load', function() {
-  var control= document.querySelector('.user-timer')
+  var timer;
+  var control= document.querySelector('.user-timer');
   var backBtn = document.getElementById('back_to_tests');
  
   if (control) {
@@ -13,9 +13,8 @@ document.addEventListener('turbolinks:load', function() {
       if (timeLeft > 0) {
         timeLeft -= 1;
       } else {
-        var participationId = document.querySelector('.user-timer').dataset.test_id;
         alert('There is no time left to finish the test :(');  
-        document.querySelector('form').submit();
+        //document.querySelector('form').submit();
       }
       //formart seconds back into mm:ss
       h = pad((timeLeft / 60 / 60) % 60);
