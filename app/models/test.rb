@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
-  attribute :time_to_pass, SecondsType.new
+  attribute :time_to_pass, :seconds
 
   has_many :participations, dependent: :destroy
   has_many :users, through: :participations, dependent: :destroy
