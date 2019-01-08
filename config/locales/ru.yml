@@ -262,6 +262,9 @@ ru:
       out_of: "из %{all_counter}"
       next: "Дальше"
       gist_question: "Добавить в Gist"
+      no_time_left: "Время для прохождения теста истекло"
+    update:
+      no_time_left: "Время для прохождения теста истекло"
     gist:
       success: "Вопрос успешно <a href=\"%{url}\" target=\"_blank\">отправлен</a> в Gist"
       fail: "Во время отправки вопроса в Gist произошла ошибка"

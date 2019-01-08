@@ -35,6 +35,10 @@ class Participation < ApplicationRecord
     (100 * current_question_counter) / test.questions.size
   end
 
+  def time_left?
+    (Time.current.to_i - created_at.to_i) < test.time_to_pass
+  end
+
   private
 
   def before_validation_set_first_question

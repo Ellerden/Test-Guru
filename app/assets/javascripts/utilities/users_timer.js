@@ -1,35 +1,33 @@
 document.addEventListener('turbolinks:load', function() {
-  var timer;
   var control= document.querySelector('.user-timer');
-  var backBtn = document.getElementById('back_to_tests');
  
   if (control) {
-    backBtn.addEventListener('click', turnOffTimer); 
-    var timeLeft = control.dataset.time;
-    //convet to seconds for easier caculation
-
-    timer = setInterval(function() {
-      // if time passed redirect to result page 
-      if (timeLeft > 0) {
-        timeLeft -= 1;
-      } else {
-        alert('There is no time left to finish the test :(');  
-        //document.querySelector('form').submit();
-      }
-      //formart seconds back into mm:ss
-      h = pad((timeLeft / 60 / 60) % 60);
-      m = pad((timeLeft / 60) % 60);
-      s = pad(timeLeft % 60);
-      document.getElementById('countdown').textContent = h + ":" + m + ":" + s;
-    }, 1000) //calling timer every 1 second to do a count down
+    var timeToPass = control.dataset.time;
+    var testCreatedAt = control.dataset.test_created;
+    var resultLink = control.dataset.result_link;
+    turnOnTimer();
   }
 
-  function turnOffTimer() {
-  clearInterval(timer);
-}
+  function turnOnTimer() {
+    var timeNow = (Date.now() / 1000).toFixed(); // show current time in seconds not milisec
+    var timePassed = timeNow - testCreatedAt;
+    
+    if (timePassed > timeToPass) {
+      alert('There is no time left to finish the test :(');
+      window.location.href = resultLink;
+    }
+    secondsToHM(timeToPass - timePassed);
+    setTimeout(turnOnTimer, 1000);
+  }
+
+  function secondsToHM(timeLeft) {
+    h = pad((timeLeft / 60 / 60) % 60);
+    m = pad((timeLeft / 60) % 60);
+    s = pad(timeLeft % 60);
+    control.textContent = h + ":" + m + ":" + s;
+  }
 })
 
-// add additional 0 before the number
 function pad(num) {
   return ("0" + parseInt(num)).substr(-2);
 }

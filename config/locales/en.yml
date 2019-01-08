@@ -256,10 +256,13 @@ en:
       out_of: "out of %{all_counter}"
       next: "Next"
       gist_question: "Save to Gist"
+      no_time_left: "No time left to pass the test"
+    update:
+      no_time_left: "No time left to pass the test"
     gist:
       success: "Question was successfully <a target=\"_blank\" href=\"%{url}\">saved</a>"
       fail: "Something went wrong while saving Gist"
-
+      
   sessions:
     create:
       greetings: "Welcome %{full_name}!"

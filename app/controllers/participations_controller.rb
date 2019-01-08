@@ -38,10 +38,7 @@ class ParticipationsController < ApplicationController
   end
 
   def check_time
-  # if (Time.now - @participation.created_at) >= @test.time_to_pass
-    if (Time.now - @participation.created_at) >= @test.time_to_pass
-      redirect_to result_participation_path(@participation), alert: t('.no_time_left')
-    end
+    redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left?
   end
 
   private
