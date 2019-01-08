@@ -41,6 +41,7 @@ class ParticipationsController < ApplicationController
     redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left?
   end
 
+
   private
 
   def find_participation

@@ -15,8 +15,8 @@
 
 <% if @tests.present? %>
   <div class="row">
-    <% @tests.each_slice(3) do |two_tests| %>
-      <% two_tests.each do |test| %>
+    <% @tests.each_slice(3) do |test_group| %>
+      <% test_group.each do |test| %>
           <div class="col col-sm-4">
             <div class="card test-card" >
               <div class="card-header">

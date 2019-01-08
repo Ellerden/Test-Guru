@@ -39,6 +39,11 @@ class Participation < ApplicationRecord
     (Time.current.to_i - created_at.to_i) < test.time_to_pass
   end
 
+  def check_reward
+
+    # тут проверяем условия - может ли юзер получить бейдж
+  end
+
   private
 
   def before_validation_set_first_question
