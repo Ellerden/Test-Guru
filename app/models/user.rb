@@ -11,9 +11,13 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id,
                            dependent: :destroy
   has_many :gists, dependent: :destroy
+<<<<<<< HEAD
   has_many :user_badges
   has_many :badges, through: :user_badges
 
+=======
+  has_many :badges
+>>>>>>> 8171ea8... create badges for admin
 
   validates :first_name, :last_name, presence: true
 

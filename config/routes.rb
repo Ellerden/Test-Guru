@@ -31,7 +31,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :badges
+<<<<<<< HEAD
     resources :rules, only: %i[new create edit update index]
+=======
+  # resources :rules
+>>>>>>> 8171ea8... create badges for admin
     resources :gists, only: :index
 
     resources :tests do

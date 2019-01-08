@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_01_09_100108) do
+=======
+ActiveRecord::Schema.define(version: 2019_01_08_201739) do
+>>>>>>> 8171ea8... create badges for admin
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,9 +74,13 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
 
   create_table "rules", force: :cascade do |t|
     t.string "name", null: false
+<<<<<<< HEAD
     t.string "params"
     t.string "description", null: false
     t.index ["name", "params"], name: "index_rules_on_name_and_params", unique: true
+=======
+    t.string "condition", null: false
+>>>>>>> 8171ea8... create badges for admin
   end
 
   create_table "tests", force: :cascade do |t|
@@ -130,6 +138,9 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
+<<<<<<< HEAD
   add_foreign_key "user_badges", "badges"
   add_foreign_key "user_badges", "users"
+=======
+>>>>>>> 8171ea8... create badges for admin
 end

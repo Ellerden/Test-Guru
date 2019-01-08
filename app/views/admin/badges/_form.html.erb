@@ -1,6 +1,9 @@
 <div class="container">
   <div class="col col-md-6">
+<<<<<<< HEAD
     <%= badges_header(@badge) %>
+=======
+>>>>>>> 8171ea8... create badges for admin
     
     <%= render 'shared/errors', resource: @badge %>
 
@@ -11,6 +14,7 @@
           <%= f.text_field :name, placeholder: true, class: "form-control" %>
         </p>
         <p>
+<<<<<<< HEAD
           <div class="row">
             <% Badge::IMAGES.map do |img| %>
               <div class="col-sm-4">
@@ -24,11 +28,23 @@
           <%= f.label :rule %>
           <%= f.collection_select(:rule_id, Rule.all, :id, :description, prompt: true) %>
           <%= link_to t('.create_new_rule'), new_admin_rule_path, class: "btn btn-secondary" %>
+=======
+          <%= f.label :path %>
+          <%= f.file_field :route %>
+        </p>
+        <p>
+          <%= f.label :rule %>
+          <%= f.collection_select(:rule_id, Rule.all, :id, :rule_with_params, prompt: true) %>
+>>>>>>> 8171ea8... create badges for admin
         </p>
         <div class="row">
           <div class="col col-md-6">
             <%= f.submit class: "btn btn-primary" %>
+<<<<<<< HEAD
             <%= link_to t('.back'), admin_badges_path, class: "nav-link" %>
+=======
+            <%= link_to t('.back'), admin_tests_path, class: "nav-link" %>
+>>>>>>> 8171ea8... create badges for admin
           </div> 
         </div>
       </div>
