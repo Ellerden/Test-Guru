@@ -1,7 +1,6 @@
 class Admin::BadgesController < Admin::BaseController
   before_action :set_badges, only: :index
-  before_action :find_badge, only: %i[destroy show update edit find_rule]
-  before_action :find_rule, only: %i[index show]
+  before_action :find_badge, only: %i[destroy show update edit]
 
   def index
   end
@@ -46,10 +45,6 @@ class Admin::BadgesController < Admin::BaseController
 
   def find_badge
     @badge = Badge.find(params[:id])
-  end
-
-  def find_rule
-    @rule = Rule.find(id = @badge.id)
   end
 
   def badge_params

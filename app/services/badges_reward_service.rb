@@ -9,13 +9,8 @@ class BadgesRewardService
 
   def call
     Badge.all.each do |badge|
-      find_rule
-      achieve_badge(badge) if send("passed_#{@rule.name}_rule?", @rule.condition)
+      achieve_badge(badge) if send("passed_#{badge.rule.name}_rule?", badge.rule.condition)
     end
-  end
-
-  def find_rule
-    @rule = Rule.where('id = ?', badge.rule_id)
   end
 
   def passed_first_try_rule?(_rule)
