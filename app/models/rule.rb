@@ -5,8 +5,8 @@ class Rule < ApplicationRecord
 
   #to properly show it in badges creation selector form
   def rule_with_params
-    if condition.present?
-      "#{name} #{condition}"
+    if params.present?
+      "#{name} #{params}"
     else
       name
     end

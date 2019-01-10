@@ -30,6 +30,10 @@ class ParticipationsController < ApplicationController
   def update
     @participation.accept!(params[:answer_ids])
     if @participation.completed?
+      awards = BadgesRewardService.new(@participation)
+      awards.call
+      flash[:notice] = t('.new_awards') if awards.rewarded
+
       TestsMailer.completed_test(@participation).deliver_now
       redirect_to result_participation_path(@participation)
     else
@@ -37,10 +41,10 @@ class ParticipationsController < ApplicationController
     end
   end
 
+  # здесь нужно снова рендерить update вместо redirect_to
   def check_time
-    redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left?
+    redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left? || !@participation.test.time_to_pass.present?
   end
-
 
   private
 
