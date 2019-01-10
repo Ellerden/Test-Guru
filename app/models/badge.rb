@@ -1,5 +1,6 @@
 class Badge < ApplicationRecord
 <<<<<<< HEAD
+<<<<<<< HEAD
   IMAGES = [
     ['First try', 'badges/first_try.png'],
     ['Whole category', 'badges/whole_category.png'],
@@ -18,6 +19,8 @@ class Badge < ApplicationRecord
 #  has_many :users, dependent: :nullify
 #  has_many :rules, dependent: :destroy
 
+=======
+>>>>>>> 4792f79... show earned and left badges for user
   has_many :user_badges, dependent: :delete_all
   has_many :users, through: :user_badges
   belongs_to :rule

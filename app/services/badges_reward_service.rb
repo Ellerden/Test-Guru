@@ -37,19 +37,16 @@ class BadgesRewardService
 =======
 =======
   attr_reader :rewarded
-  attr_accessor :ba
 
 >>>>>>> f80ac86... reward users with badges
   def initialize(participation)
     @participation = participation
     @user = @participation.user
     @rewarded = false
-    @ba = []
   end
 
   def achieve_badge(badge)
     @participation.user.badges << badge
-    @ba << badge
     @rewarded = true
   end
 
