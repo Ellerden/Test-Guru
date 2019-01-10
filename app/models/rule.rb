@@ -20,9 +20,14 @@ class Rule < ApplicationRecord
 
   #to properly show it in badges creation selector form
   def rule_with_params
+<<<<<<< HEAD
     if condition.present?
       "#{name} #{condition}"
 >>>>>>> 8171ea8... create badges for admin
+=======
+    if params.present?
+      "#{name} #{params}"
+>>>>>>> f80ac86... reward users with badges
     else
       name
     end

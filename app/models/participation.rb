@@ -37,11 +37,14 @@ class Participation < ApplicationRecord
 
   def time_left?
     (Time.current.to_i - created_at.to_i) < test.time_to_pass if test.time_to_pass.present?
+<<<<<<< HEAD
   end
 
   def check_reward
 
     # тут проверяем условия - может ли юзер получить бейдж
+=======
+>>>>>>> f80ac86... reward users with badges
   end
 
   private

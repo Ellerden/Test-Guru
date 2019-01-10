@@ -32,7 +32,11 @@ class ParticipationsController < ApplicationController
     if @participation.completed?
       awards = BadgesRewardService.new(@participation)
       awards.call
+<<<<<<< HEAD
       flash[:notice] = t('.new_awards', url: user_badges_url) if awards.rewarded
+=======
+      flash[:notice] = t('.new_awards') if awards.rewarded
+>>>>>>> f80ac86... reward users with badges
 
       TestsMailer.completed_test(@participation).deliver_now
       redirect_to result_participation_path(@participation)
@@ -45,7 +49,6 @@ class ParticipationsController < ApplicationController
   def check_time
     redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left? || !@participation.test.time_to_pass.present?
   end
-
 
   private
 
