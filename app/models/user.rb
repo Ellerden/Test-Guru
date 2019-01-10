@@ -36,6 +36,7 @@ class User < ApplicationRecord
     participations.order(id: :desc).find_by(test: test)
   end
 
+
   def admin_rights?
     self.is_a?(Admin)
   end

@@ -1,17 +1,14 @@
 class BadgesRewardService
   attr_reader :rewarded
-  attr_accessor :ba
 
   def initialize(participation)
     @participation = participation
     @user = @participation.user
     @rewarded = false
-    @ba = []
   end
 
   def achieve_badge(badge)
     @participation.user.badges << badge
-    @ba << badge
     @rewarded = true
   end
 

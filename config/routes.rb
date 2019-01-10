@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   resources :users, only: :create
   resources :sessions, only: :create
 
+  get 'profile', to: 'profile#show'
+
   get 'contact_us', to: 'messages#new'
   resources :messages, only: :create
+
+  resources :user_badges, only: :index
 
   resources :tests, only: :index do
     resources :questions, shallow: true, only: :show do

@@ -1,7 +1,4 @@
 class Badge < ApplicationRecord
-#  has_many :users, dependent: :nullify
-#  has_many :rules, dependent: :destroy
-
   has_many :user_badges, dependent: :delete_all
   has_many :users, through: :user_badges
   belongs_to :rule
