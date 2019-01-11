@@ -29,6 +29,7 @@ class BadgesRewardService
   def passed_whole_category_rule?(category)
     tests_by_categories = Test.by_category(category).count
     tests_by_categories != 0 && (@user.test_passed_by_category(category).uniq.count == tests_by_categories)
+<<<<<<< HEAD
   end
 
   def passed_whole_level_rule?(level)
@@ -65,6 +66,8 @@ class BadgesRewardService
   def passed_whole_category_rule?(category)
     tests_by_categories = Test.by_category(category).count
     tests_by_categories != 0 && (@user.test_passed_by_category(category).uniq.count == test_by_categories)
+=======
+>>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
   end
 
   def passed_whole_level_rule?(level)

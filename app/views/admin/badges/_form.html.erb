@@ -15,6 +15,9 @@
         </p>
         <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
           <div class="row">
             <% Badge::IMAGES.map do |img| %>
               <div class="col-sm-4">
@@ -23,6 +26,7 @@
               </div>
             <% end %>
           </div>
+<<<<<<< HEAD
         </p>
         <p>
           <%= f.label :rule %>
@@ -36,6 +40,13 @@
           <%= f.label :rule %>
           <%= f.collection_select(:rule_id, Rule.all, :id, :rule_with_params, prompt: true) %>
 >>>>>>> 8171ea8... create badges for admin
+=======
+        </p>
+        <p>
+          <%= f.label :rule %>
+          <%= f.collection_select(:rule_id, Rule.all, :id, :description, prompt: true) %>
+          <%= link_to t('.create_new_rule'), new_admin_rule_path, class: "btn btn-secondary" %>
+>>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
         </p>
         <div class="row">
           <div class="col col-md-6">
