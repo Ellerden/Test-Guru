@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :badges
-  # resources :rules
+    resources :rules, only: %i[new create edit update index]
     resources :gists, only: :index
 
     resources :tests do

@@ -10,12 +10,19 @@
           <%= f.text_field :name, placeholder: true, class: "form-control" %>
         </p>
         <p>
-          <%= f.label :path %>
-          <%= f.file_field :route %>
+          <div class="row">
+            <% Badge::IMAGES.map do |img| %>
+              <div class="col-sm-4">
+                <%= f.radio_button :route, img[1] %>
+                <%= image_tag(img[1], width: '100px') %>
+              </div>
+            <% end %>
+          </div>
         </p>
         <p>
           <%= f.label :rule %>
-          <%= f.collection_select(:rule_id, Rule.all, :id, :rule_with_params, prompt: true) %>
+          <%= f.collection_select(:rule_id, Rule.all, :id, :description, prompt: true) %>
+          <%= link_to t('.create_new_rule'), new_admin_rule_path, class: "btn btn-secondary" %>
         </p>
         <div class="row">
           <div class="col col-md-6">

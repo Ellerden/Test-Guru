@@ -13,7 +13,6 @@
           <div class="col-sm-4">
             <div class="card test-card" >
               <%= image_tag image_path(badge.route), class: "card-img-top" , id: 'badge_image' %>
-              <img class="card-img-top" src="<%= badge.route %>" alt="<%= badge.route %>">
               <div class="card-body">
                 <h5 class="card-title"><%= badge.name %></h5>
                 <p class="card-text"><%= badge.rule.description %></p>
@@ -39,7 +38,6 @@
             <div class="col-sm-4">
               <div class="card test-card" >
                 <%= image_tag image_path(badge.route), class: "card-img-top" , id: 'badge_image' %>
-                <img class="card-img-top" src="<%= badge.route %>" alt="<%= badge.route %>">
                 <div class="card-body">
                   <h5 class="card-title"><%= badge.name %></h5>
                   <p class="card-text"><%= badge.rule.description %></p>

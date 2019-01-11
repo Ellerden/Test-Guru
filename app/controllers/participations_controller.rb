@@ -32,7 +32,7 @@ class ParticipationsController < ApplicationController
     if @participation.completed?
       awards = BadgesRewardService.new(@participation)
       awards.call
-      flash[:notice] = t('.new_awards') if awards.rewarded
+      flash[:notice] = t('.new_awards', url: user_badges_url) if awards.rewarded
 
       TestsMailer.completed_test(@participation).deliver_now
       redirect_to result_participation_path(@participation)

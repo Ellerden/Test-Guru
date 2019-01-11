@@ -259,6 +259,7 @@ en:
       no_time_left: "No time left to pass the test"
     update:
       no_time_left: "No time left to pass the test"
+      new_awards: "Hooray, you've earned a new <a href=\"%{url}\" target=\"_blank\">award!</a>"
     gist:
       success: "Question was successfully <a target=\"_blank\" href=\"%{url}\">saved</a>"
       fail: "Something went wrong while saving Gist"

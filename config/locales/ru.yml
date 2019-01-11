@@ -265,6 +265,7 @@ ru:
       no_time_left: "Время для прохождения теста истекло"
     update:
       no_time_left: "Время для прохождения теста истекло"
+      new_awards: "Ура, вы заработали <a href=\"%{url}\" target=\"_blank\">награду!</a>"
     gist:
       success: "Вопрос успешно <a href=\"%{url}\" target=\"_blank\">отправлен</a> в Gist"
       fail: "Во время отправки вопроса в Gist произошла ошибка"
