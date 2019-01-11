@@ -1,5 +1,7 @@
 <% if @participation.test.time_to_pass %>
+
   <div class="user-timer" id="countdown" data-time="<%= @participation.test.time_to_pass %>"
                                          data-result_link="<%= result_participation_url(@participation) %>"
-                                         data-test_created="<%= @participation.created_at.to_i %>"
+                                         data-test_created="<%= @participation.created_at.to_i %>" >
+  </div>
 <% end %>

@@ -35,8 +35,8 @@ class Participation < ApplicationRecord
     (100 * current_question_counter) / test.questions.size
   end
 
-  def time_left?
-    (Time.current - created_at) < test.time_to_pass if test.time_to_pass
+  def time_over?
+    (Time.current - created_at) >= test.time_to_pass if test.time_to_pass
   end
 
   private

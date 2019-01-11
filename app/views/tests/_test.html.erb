@@ -3,7 +3,7 @@
   <td><%= test.category.title %></td>
   <td><%= test.level %></td>
   <td><%= test.questions.count %></td>
-  <td><% if test.time_to_pass %> <%= test.time_to_pass %> <%= t('.seconds') %> <% end %> </td>
+  <td><% if test.time_to_pass %> <%= test.time_hours_minutes %><% end %> </td>
   <td>
     <%= button_to t('.start_test'), start_test_path(test), class: "btn btn-primary" %>
   </td>

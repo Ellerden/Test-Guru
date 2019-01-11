@@ -24,7 +24,7 @@
         </div>
       <% end %>
       <%= link_to t('.gist_question'), gist_participation_path(@participation), method: :post, class: 'btn btn-warning' %>
-      <%= f.submit t('.next'), class: 'btn btn-primary' %>
+      <%= f.submit t('.next'), class: 'btn btn-primary', id: 'btnnext' %>
     </div>
   <% end %>
   <%= render "linktests" %>

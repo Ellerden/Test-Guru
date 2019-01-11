@@ -2,8 +2,7 @@
 
 class ParticipationsController < ApplicationController
   before_action :find_participation, only: %i[show update result gist]
-  before_action :set_test, only: %i[show update result check_time]
-  before_action :check_time, only: :update
+  before_action :set_test, only: %i[show update result]
 
   def show
   end
@@ -29,16 +28,12 @@ class ParticipationsController < ApplicationController
 
   def update
     @participation.accept!(params[:answer_ids])
-    if @participation.completed?
+    if @participation.completed? || @participation.time_over?
       TestsMailer.completed_test(@participation).deliver_now
       redirect_to result_participation_path(@participation)
     else
       render :show
     end
-  end
-
-  def check_time
-    redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left? || !test.time_to_pass
   end
 
   private
