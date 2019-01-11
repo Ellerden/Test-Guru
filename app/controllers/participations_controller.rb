@@ -38,7 +38,7 @@ class ParticipationsController < ApplicationController
   end
 
   def check_time
-    redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left?
+    redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left? || !test.time_to_pass
   end
 
   private
