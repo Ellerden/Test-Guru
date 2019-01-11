@@ -1,15 +1,6 @@
 class Admin::BadgesController < Admin::BaseController
   before_action :set_badges, only: :index
-<<<<<<< HEAD
-<<<<<<< HEAD
   before_action :find_badge, only: %i[destroy show update edit]
-=======
-  before_action :find_badge, only: %i[destroy show update edit find_rule]
-  before_action :find_rule, only: %i[index show]
->>>>>>> 8171ea8... create badges for admin
-=======
-  before_action :find_badge, only: %i[destroy show update edit]
->>>>>>> a90c91d... refactoring badges for admin
 
   def index
   end
@@ -56,16 +47,6 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.find(params[:id])
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  def find_rule
-    @rule = Rule.find(id = @badge.id)
-  end
-
->>>>>>> 8171ea8... create badges for admin
-=======
->>>>>>> a90c91d... refactoring badges for admin
   def badge_params
     params.require(:badge).permit(:name, :route, :rule_id)
   end

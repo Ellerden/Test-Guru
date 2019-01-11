@@ -1,25 +1,13 @@
 <div class="container">
   <div class="col col-md-6">
-<<<<<<< HEAD
-<<<<<<< HEAD
     <%= rule_header(@rule) %>
-=======
-    <%= test_header(@rule) %>
->>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
-=======
-    <%= rule_header(@rule) %>
->>>>>>> d261899... localize badges and rules for admin and users
-    
     <%= render 'shared/errors', resource: @rule %>
 
     <%= form_with(model: [:admin, @rule], local: true) do |f| %>
       <div class="form-group badge-rule">
         <p>
-    
           <%= f.label :name %>
           <%= f.select(:name, options_for_select(Rule::RULES), prompt: true) %>
-
-
         </p>
         <p>
           <fieldset disabled class="choose-level">

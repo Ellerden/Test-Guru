@@ -32,15 +32,7 @@ class ParticipationsController < ApplicationController
     if @participation.completed?
       awards = BadgesRewardService.new(@participation)
       awards.call
-<<<<<<< HEAD
-<<<<<<< HEAD
       flash[:notice] = t('.new_awards', url: user_badges_url) if awards.rewarded
-=======
-      flash[:notice] = t('.new_awards') if awards.rewarded
->>>>>>> f80ac86... reward users with badges
-=======
-      flash[:notice] = t('.new_awards', url: user_badges_url) if awards.rewarded
->>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
 
       TestsMailer.completed_test(@participation).deliver_now
       redirect_to result_participation_path(@participation)

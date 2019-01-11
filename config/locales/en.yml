@@ -110,6 +110,8 @@ en:
         questions_number: "Number of questions"
         time: "Time to pass"
         seconds: "s."
+        create_test: "Create test"
+        create_award: "Create award"
       create:
         success: "Test was successfully created!"
       update:

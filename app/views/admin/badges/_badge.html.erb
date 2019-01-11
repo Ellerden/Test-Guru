@@ -6,31 +6,11 @@
     <%= badge.name %>
   </td>
   <td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     <%= badge.rule.description %>
   </td>
   <td>
     <%= link_to t('.show'), admin_badge_path(badge) %>
     <%= link_to t('.edit'), edit_admin_badge_path(badge) %>
     <%= link_to t('.delete'), admin_badge_path(badge), method: :delete %>
-=======
-    <%= @rule.rule_with_params %>
-=======
-    <%= badge.rule.rule_with_params %>
->>>>>>> a90c91d... refactoring badges for admin
-  </td>
-  <td>
-    <p>create/edit/delete</p>
->>>>>>> 8171ea8... create badges for admin
-=======
-    <%= badge.rule.description %>
-  </td>
-  <td>
-    <%= link_to t('.show'), admin_badge_path(badge) %>
-    <%= link_to t('.edit'), edit_admin_badge_path(badge) %>
-    <%= link_to t('.delete'), admin_badge_path(badge), method: :delete %>
->>>>>>> f80ac86... reward users with badges
   </td>
 </tr>

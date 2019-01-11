@@ -116,6 +116,8 @@ ru:
         edit: "Изменить"
         cancel: "Отмена"
         delete: "Удалить"
+        create_test: "Создать тест"
+        create_award: "Создать награду"
       create:
         success: "Тест успешно создан!"
       update:
