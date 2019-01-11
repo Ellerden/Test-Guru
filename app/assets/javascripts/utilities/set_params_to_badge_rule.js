@@ -3,9 +3,12 @@ document.addEventListener('turbolinks:load', function() {
 
   if (control) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
+=======
+>>>>>>> d261899... localize badges and rules for admin and users
     var fieldLevel = document.querySelector('.choose-level');
     var labelLevel =  document.getElementById('label-add-level');
     var fieldCategory = document.querySelector('.choose-category');
@@ -14,18 +17,24 @@ document.addEventListener('turbolinks:load', function() {
     control.addEventListener('change', function() {
       //var optionValue = control.options[control.selectedIndex].value;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
+=======
+>>>>>>> d261899... localize badges and rules for admin and users
       if (this.value === 'whole_category') {
         enableCategory();
       } else {
         enableLevel();
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       //alert(this.value);
 >>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
+=======
+>>>>>>> d261899... localize badges and rules for admin and users
     }, false);
   }
 
@@ -43,7 +52,11 @@ document.addEventListener('turbolinks:load', function() {
     labelCategory.classList.add('text-muted');
   }  
 <<<<<<< HEAD
+<<<<<<< HEAD
 })
 =======
 })
 >>>>>>> f5a79f3... fix badge path, create rules constructor, refactoring
+=======
+})
+>>>>>>> d261899... localize badges and rules for admin and users
