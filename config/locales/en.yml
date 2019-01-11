@@ -61,8 +61,13 @@ en:
         author_name: 'Your name'
         author_email: 'Your email'
         body: "Write your message"
+      badge:
+        name: "Write your award title"
+      rule:
+        description: "For example: Passed all tests from AI category"
+
     select:
-        prompt: "Select the category"
+        prompt: "Select something"
 
   shared:
     errors:
@@ -79,6 +84,8 @@ en:
       logout: "Log out" 
       signup: "Sign up"
       admin_panel_title: "Admin Panel Test Meister"
+      profile: "Profile"
+      badges: "Badges"
 
   messages:
     create:
@@ -209,9 +216,61 @@ en:
         author: "Author"
         back: "Back"
 
+    badges:
+      index:
+        header: "All awards"
+        image: "Image"
+        name: "Title"
+        rule: "Earned for what?"
+        actions: "Actions"
+        back: "Back"
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        header: "Award"
+        back: "Back"
+      create:
+        success: "Award was successfully created!"
+      update:
+        success: "Award was successfully updated!"
+      destroy:
+        success: "Award was successfully deleted!"
+      form:
+        create_new_rule: "New awarding rule"
+        new_badge: "Create award"
+        edit_badge: "Edit award"
+        back: "Back"
+    rules:
+      index:
+        header: "All awarding rules"
+        name: "Title"
+        params: "Params"
+        description: "Description"
+        back: "Back"
+      create:
+        success: "New awarding rule was successfully created!"
+      update:
+        success: "Awarding rule was successfully updated!"
+      destroy:
+        success: "Awarding rule was successfully deleted!"
+      form:
+        level: "Level"
+        category: "Category"
+        new_rule: "New awarding rule"
+        edit_rule: "Edit awarding rule"
+        back: "Back"
+
+  rules: 
+    whole_category: "All tests of the category"
+    whole_level: "All tests of the level"
+
     nav:
       admin_panel_title: "Admin panel Test Meister"
       welcome: "Welcome"
+      profile: "Profile"
+      badges: "Badges"
       logout: "Log out"
 
   tests:
@@ -263,7 +322,12 @@ en:
     gist:
       success: "Question was successfully <a target=\"_blank\" href=\"%{url}\">saved</a>"
       fail: "Something went wrong while saving Gist"
-      
+
+  user_badges:
+    index:
+      header: "All earned badges"
+      left_badges: "Badges yet to earn"
+
   sessions:
     create:
       greetings: "Welcome %{full_name}!"
