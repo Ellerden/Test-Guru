@@ -36,7 +36,7 @@ class Participation < ApplicationRecord
   end
 
   def time_left?
-    (Time.current.to_i - created_at.to_i) < test.time_to_pass if test.time_to_pass.present?
+    (Time.current - created_at) < test.time_to_pass if test.time_to_pass.present?
   end
 
   private
