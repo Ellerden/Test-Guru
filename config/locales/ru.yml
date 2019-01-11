@@ -61,13 +61,8 @@ ru:
         author_name: 'Ваше имя'
         author_email: 'Ваш email'
         body: "Введите ваше сообщение"
-      badge:
-        name: "Введите название награды"
-      rule:
-        description: "Например: Пройдены все тесты категории Кинематограф"
-
     select:
-        prompt: "Выберите один из вариантов"
+        prompt: "Выберите категорию"
 
   shared:
     errors:
@@ -85,8 +80,6 @@ ru:
       login: "Войти"
       logout: "Выйти" 
       signup: "Зарегистрироваться"
-      profile: "Профиль"
-      badges: "Награды"
       admin_panel_title: "Панель администратора Test Meister"
 
   test_mailer:
@@ -217,8 +210,6 @@ ru:
     nav:
       admin_panel_title: "Панель администратора Test Meister"
       welcome: "Добро пожаловать"
-      profile: "Профиль"
-      badges: "Награды"
       logout: "Выйти"
 
     gists:
@@ -228,56 +219,6 @@ ru:
         link: "Ссылка на git"
         author: "Автор"
         back: "Назад"
-
-    badges:
-      index:
-        header: "Все награды"
-        image: "Изображение"
-        name: "Название"
-        rule: "За что?"
-        actions: "Действия"
-        back: "Назад"
-      badge:
-        show: "Подробнее"
-        edit: "Изменить"
-        delete: "Удалить"
-      show:
-        header: "Награда"
-        back: "Назад"
-      create:
-        success: "Награда успешно создана!"
-      update:
-        success: "Награда успешно обновлена!"
-      destroy:
-        success: "Награда успешно удалена!"
-      form:
-        create_new_rule: "Новое условие вручения"
-        new_badge: "Создать новую награду"
-        edit_badge: "Редактировать награду"
-        back: "Назад"
-    rules:
-      index:
-        header: "Все правила вручения наград"
-        name: "Название"
-        params: "Параметры"
-        description: "Описание"
-        back: "Назад"
-      create:
-        success: "Правило вручения успешно создано!"
-      update:
-        success: "Правило вручения успешно обновлено!"
-      destroy:
-        success: "Правило вручения успешно удалено!"
-      form:
-        level: "Уровень"
-        category: "Категория"
-        new_rule: "Новое правило вручения"
-        edit_rule: "Редактировать правило вручения"
-        back: "Назад"
-
-  rules: 
-    whole_category: "Все тесты категории"
-    whole_level: "Все тесты уровня"
 
   tests:
     index:
@@ -324,15 +265,9 @@ ru:
       no_time_left: "Время для прохождения теста истекло"
     update:
       no_time_left: "Время для прохождения теста истекло"
-      new_awards: "Ура, вы заработали <a href=\"%{url}\" target=\"_blank\">награду!</a>"
     gist:
       success: "Вопрос успешно <a href=\"%{url}\" target=\"_blank\">отправлен</a> в Gist"
       fail: "Во время отправки вопроса в Gist произошла ошибка"
-
-  user_badges:
-    index:
-      header: "Все ваши награды"
-      left_badges: "Еще предстоит получить"
 
   sessions:
     create:

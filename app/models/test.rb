@@ -30,8 +30,4 @@ class Test < ApplicationRecord
   def self.by_category(category)
     Test.joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
   end
-
-  def self.by_level(level)
-    Test.where('level = ?', level)
-  end
 end

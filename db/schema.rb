@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_100108) do
+ActiveRecord::Schema.define(version: 2019_01_07_111408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "route", null: false
-    t.bigint "rule_id", null: false
+    t.string "title", null: false
+    t.string "path", null: false
+    t.string "achievment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["rule_id"], name: "index_badges_on_rule_id"
+    t.index ["title", "achievment"], name: "index_badges_on_title_and_achievment", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -68,13 +68,6 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
-  create_table "rules", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "params"
-    t.string "description", null: false
-    t.index ["name", "params"], name: "index_rules_on_name_and_params", unique: true
-  end
-
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 1
@@ -86,15 +79,6 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
-  end
-
-  create_table "user_badges", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "badge_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
-    t.index ["user_id"], name: "index_user_badges_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -112,8 +96,8 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
     t.string "type", default: "User", null: false
     t.string "first_name"
     t.string "last_name"
-    t.bigint "badge_id"
-    t.index ["badge_id"], name: "index_users_on_badge_id"
+    t.bigint "badges_id"
+    t.index ["badges_id"], name: "index_users_on_badges_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -121,7 +105,6 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "badges", "rules"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "participations", "questions", column: "current_question_id"
@@ -130,6 +113,5 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
-  add_foreign_key "user_badges", "badges"
-  add_foreign_key "user_badges", "users"
+  add_foreign_key "users", "badges", column: "badges_id"
 end
