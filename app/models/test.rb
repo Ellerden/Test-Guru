@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
+  attribute :time_to_pass, :seconds
+
   has_many :participations, dependent: :destroy
   has_many :users, through: :participations, dependent: :destroy
   has_many :questions, dependent: :destroy
@@ -20,13 +22,16 @@ class Test < ApplicationRecord
                                     greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
 
-
 # Использовать тут скоуп by_category?
   def self.by_category_title(category)
      self.by_category.order(title: :desc).pluck(:title)
   end
-  
+
   def self.by_category(category)
     Test.joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
+  end
+
+  def time_hours_minutes
+    Time.at(self.time_to_pass).utc.strftime("%H:%M")
   end
 end

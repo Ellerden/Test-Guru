@@ -14,9 +14,14 @@ class Participation < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
-    self.current_question = next_question
-    save!
+    # чтобы нельзя было продолжать слать ответы после того как время вышло
+    # принимаем последний выбранный ответ и переводим тест в completed
+    unless self.completed?
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+      self.current_question = next_question
+      save!
+    end
+    self.current_question = nil if time_to_pass_over?
   end
 
   def current_question_counter
@@ -33,6 +38,10 @@ class Participation < ApplicationRecord
 
   def progress
     (100 * current_question_counter) / test.questions.size
+  end
+
+  def time_to_pass_over?
+    (Time.current - created_at) >= test.time_to_pass if test.time_to_pass
   end
 
   private

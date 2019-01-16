@@ -8,15 +8,13 @@ class Answer < ApplicationRecord
   validates :text, presence: true
   validate :validate_answers_length, on: :create
 
-  def maximum?
+  def maximum_capacity?
     question.answers.size > 4
   end
 
   private
 
   def validate_answers_length
-    errors.add(:base, I18n.t('errors.max_answers')) if self.maximum?
+    errors.add(:base, :max_answers) if self.maximum_capacity?
   end
-
-
 end

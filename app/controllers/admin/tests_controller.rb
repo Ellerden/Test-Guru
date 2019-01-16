@@ -34,6 +34,7 @@ class Admin::TestsController < Admin::BaseController
   # тест добавляется текущему админу как автору
   def create
     @test = current_user.created_tests.build(test_params)
+
     if @test.save
       redirect_to admin_test_path(@test), notice: t('.success')
     else
@@ -61,6 +62,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :time_to_pass)
   end
 end

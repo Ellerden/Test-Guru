@@ -64,9 +64,6 @@ ru:
     select:
         prompt: "Выберите категорию"
 
-  errors:
-    max_answers: "Вы не можете добавить больше 4-х ответов"
-
   shared:
     errors:
       header:
@@ -106,6 +103,8 @@ ru:
         category: "Категория"
         level: "Уровень"
         questions_number: "Кол-во вопросов"
+        time: "Время прохождения"
+        seconds: "c."
         show: "Показать"
         edit: "Изменить"
         cancel: "Отмена"
@@ -122,6 +121,7 @@ ru:
       form:
         new_test: "Новый тест"
         edit_test: "Редактировать тест \"%{title}\""
+        test_with_time: "Тест на время"
         back: "Назад"
       form_inline:
         submit: "ОК"
@@ -228,10 +228,13 @@ ru:
       category: "Категория"
       level: "Уровень"
       questions_number: "Кол-во вопросов"
+      time: "Время прохождения"
+      seconds: "с."
     test:
       category: "Категория"
       level: "Уровень"
       questions_number: "Кол-во вопросов"
+      time: "Время прохождения"
       start_test: "Пройти тест"
     table:
       to_div: "Посмотреть в сетке"
@@ -241,6 +244,8 @@ ru:
       category: "Категория"
       level: "Уровень"
       questions_number: "Кол-во вопросов"
+      time: "Время прохождения"
+      seconds: "с."
       action: "Действие"
 
   participations:
@@ -257,6 +262,9 @@ ru:
       out_of: "из %{all_counter}"
       next: "Дальше"
       gist_question: "Добавить в Gist"
+      no_time_left: "Время для прохождения теста истекло"
+    update:
+      no_time_left: "Время для прохождения теста истекло"
     gist:
       success: "Вопрос успешно <a href=\"%{url}\" target=\"_blank\">отправлен</a> в Gist"
       fail: "Во время отправки вопроса в Gist произошла ошибка"

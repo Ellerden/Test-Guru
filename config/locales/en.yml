@@ -64,9 +64,6 @@ en:
     select:
         prompt: "Select the category"
 
-  errors:
-    max_answers: "You cannot add more than 4 answers"
-
   shared:
     errors:
       header:
@@ -104,6 +101,8 @@ en:
         category: "Category"
         level: "Level"
         questions_number: "Number of questions"
+        time: "Time to pass"
+        seconds: "s."
       create:
         success: "Test was successfully created!"
       update:
@@ -116,6 +115,7 @@ en:
       form:
         new_test: "New test"
         edit_test: "Edit test \"%{title}\""
+        test_with_time: "Test with time"
         back: "Back"
       form_inline:
         submit: "OK"
@@ -222,10 +222,13 @@ en:
       category: "Category"
       level: "Level"
       questions_number: "Number of questions"
+      time: "Time to pass"
+      seconds: "s."
     test:
       category: "Category"
       level: "Level"
       questions_number: "Number of questions"
+      recommended_time: "Time to pass"
       start_test: "Start test"
     table:
       to_div: "Show in blocks"
@@ -235,6 +238,8 @@ en:
       category: "Category"
       level: "Level"
       questions_number: "Number of questions"
+      time: "Time to pass"
+      seconds: "s."
       action: "Action"
 
   participations:
@@ -251,10 +256,13 @@ en:
       out_of: "out of %{all_counter}"
       next: "Next"
       gist_question: "Save to Gist"
+      no_time_left: "No time left to pass the test"
+    update:
+      no_time_left: "No time left to pass the test"
     gist:
       success: "Question was successfully <a target=\"_blank\" href=\"%{url}\">saved</a>"
       fail: "Something went wrong while saving Gist"
-
+      
   sessions:
     create:
       greetings: "Welcome %{full_name}!"

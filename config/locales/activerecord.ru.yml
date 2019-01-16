@@ -18,6 +18,13 @@ ru:
         email: "E-mail"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+        
+    errors:
+      models:
+        answer:
+          attributes:
+            base:
+              max_answers: "Вы не можете добавить больше 4-х ответов"
 
   helpers:
     submit:
