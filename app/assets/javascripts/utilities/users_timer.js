@@ -5,6 +5,7 @@ document.addEventListener('turbolinks:load', function() {
     var timeToPass = control.dataset.time;
     var testCreatedAt = control.dataset.test_created;
     var resultLink = control.dataset.result_link;
+    var form = document.querySelector('form');
     turnOnTimer();
   }
 
@@ -14,9 +15,10 @@ document.addEventListener('turbolinks:load', function() {
     
     if (timePassed > timeToPass) {
       alert('There is no time left to finish the test :(');
-      var button = document.getElementById('btnnext');
-      button.click();
-      return;
+      // var button = document.getElementById('btnnext');
+      // button.click();
+      //return;
+      form.submit();
     }
     secondsToHM(timeToPass - timePassed);
     setTimeout(turnOnTimer, 1000);
