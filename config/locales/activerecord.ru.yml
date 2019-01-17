@@ -8,7 +8,6 @@ ru:
       question: "Вопрос"
       category: "Категория"
       badge: "Награды"
-      rules: "Правила вручения"
     attributes:
       test:
         title: "Название теста"
@@ -23,13 +22,7 @@ ru:
       badge:
         name: "Название"
         rule: "За что вручать?"
-      rule:
-        name: "За что вручать?"
-        level: "Уровень"
-        category: "Категория"
-        description: "Подробнее"
-        whole_category: "Все тесты категории"
-        whole_level: "Все тесты уровня"
+        description: "Описание"
         
     errors:
       models:

@@ -64,7 +64,6 @@ ru:
         body: "Введите ваше сообщение"
       badge:
         name: "Введите название награды"
-      rule:
         description: "Например: Пройдены все тесты категории Кинематограф"
 
     select:
@@ -254,32 +253,15 @@ ru:
       destroy:
         success: "Награда успешно удалена!"
       form:
-        create_new_rule: "Новое условие вручения"
         new_badge: "Создать новую награду"
         edit_badge: "Редактировать награду"
-        back: "Назад"
-    rules:
-      index:
-        header: "Все правила вручения наград"
-        name: "Название"
-        params: "Параметры"
-        description: "Описание"
-        back: "Назад"
-      create:
-        success: "Правило вручения успешно создано!"
-      update:
-        success: "Правило вручения успешно обновлено!"
-      destroy:
-        success: "Правило вручения успешно удалено!"
-      form:
         level: "Уровень"
         category: "Категория"
-        new_rule: "Новое правило вручения"
-        edit_rule: "Редактировать правило вручения"
         back: "Назад"
-        name:
+        rule_name: 
           whole_category: 'Все тесты категории'
           whole_level: 'Все тесты уровня'
+          first_try: 'Тест пройден с первого раза'
 
   tests:
     index:

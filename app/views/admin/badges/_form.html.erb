@@ -26,10 +26,7 @@
 
         <div class="form-group badge-rule">
           <%= f.label :rule %>
-          <p>
-            <%= f.label :rule_name %>
-            <%= f.select(:rule_name, rule_type, prompt: true) %>
-          </p>
+          <%= f.select(:rule_name, rule_type, prompt: true) %>
           <p>
             <fieldset disabled class="choose-level">
               <label class="form-check-label text-muted" id="label-add-level">

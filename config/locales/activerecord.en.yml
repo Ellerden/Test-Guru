@@ -52,13 +52,7 @@ en:
       badge:
         name: "Title"
         rule: "For what?"
-      rule:
-        name: "For what?"
-        level: "Level"
-        category: "Category"
         description: "Description"
-        whole_category: "Whole category"
-        whole_level: "Whole level"
 
     errors:
       models:

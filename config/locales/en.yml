@@ -244,28 +244,10 @@ en:
         new_badge: "Create award"
         edit_badge: "Edit award"
         back: "Back"
-    rules:
-      index:
-        header: "All awarding rules"
-        name: "Title"
-        params: "Params"
-        description: "Description"
-        back: "Back"
-      create:
-        success: "New awarding rule was successfully created!"
-      update:
-        success: "Awarding rule was successfully updated!"
-      destroy:
-        success: "Awarding rule was successfully deleted!"
-      form:
-        level: "Level"
-        category: "Category"
-        new_rule: "New awarding rule"
-        edit_rule: "Edit awarding rule"
-        back: "Back"
-        name:
-          whole_category: "All tests of the category"
-          whole_level: "All tests of the level"
+        rule_name: 
+          whole_category: 'Whole category passed'
+          whole_level: 'Whole level passed'
+          first_try: 'Test passed from the 1st try'
 
     nav:
       admin_panel_title: "Admin panel Test Meister"
