@@ -1,12 +1,12 @@
 <tr>
   <td>
-    <%= image_tag image_path(badge.route), width: '100px'%>
+    <%= image_tag image_path(badge.image_path), width: '100px'%>
   </td>
   <td>
     <%= badge.name %>
   </td>
   <td>
-    <%= badge.rule.description %>
+    <%= badge.description %>
   </td>
   <td>
     <%= link_to t('.show'), admin_badge_path(badge) %>

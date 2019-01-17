@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
-  var control = document.getElementById('rule_name');
+  var control = document.getElementById('badge_rule_name');
 
   if (control) {
     var fieldLevel = document.querySelector('.choose-level');
@@ -8,10 +8,10 @@ document.addEventListener('turbolinks:load', function() {
     var labelCategory = document.getElementById('label-add-category');
 
     control.addEventListener('change', function() {
-      //var optionValue = control.options[control.selectedIndex].value;
+      var optionValue = control.options[control.selectedIndex].value;
       if (this.value === 'whole_category') {
         enableCategory();
-      } else {
+      } else if (this.value === 'whole_level') {
         enableLevel();
       }
     }, false);

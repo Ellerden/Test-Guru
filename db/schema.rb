@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_100108) do
+ActiveRecord::Schema.define(version: 2019_01_17_185131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,14 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
 
   create_table "badges", force: :cascade do |t|
     t.string "name", null: false
-    t.string "route", null: false
-    t.bigint "rule_id", null: false
+    t.string "image_path", null: false
+    t.string "description", null: false
+    t.string "rule_name", null: false
+    t.string "rule_params"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["rule_id"], name: "index_badges_on_rule_id"
+    t.index ["name", "rule_name", "rule_params"], name: "index_badges_on_name_and_rule_name_and_rule_params", unique: true
+    t.index ["rule_name", "rule_params"], name: "index_badges_on_rule_name_and_rule_params", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -66,13 +69,6 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["test_id"], name: "index_questions_on_test_id"
-  end
-
-  create_table "rules", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "params"
-    t.string "description", null: false
-    t.index ["name", "params"], name: "index_rules_on_name_and_params", unique: true
   end
 
   create_table "tests", force: :cascade do |t|
@@ -121,7 +117,6 @@ ActiveRecord::Schema.define(version: 2019_01_09_100108) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "badges", "rules"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "participations", "questions", column: "current_question_id"

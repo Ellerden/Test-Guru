@@ -12,7 +12,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :by_category, ->(category) {
+  scope :by_category_name, ->(category) {
                         joins(:category)
                           .where(categories: { title: category })
                       }
@@ -21,15 +21,6 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true,
                                     greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
-
-# Использовать тут скоуп by_category?
-  # def self.by_category_title(category)
-  #    self.by_category.order(title: :desc).pluck(:title)
-  # end
-
-  def self.by_category(category)
-    joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
-  end
 
   def self.by_level(level)
     Test.where('level = ?', level)

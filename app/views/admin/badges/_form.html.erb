@@ -13,17 +13,40 @@
           <div class="row">
             <% Badge::IMAGES.map do |img| %>
               <div class="col-sm-4">
-                <%= f.radio_button :route, img[1] %>
+                <%= f.radio_button :image_path, img[1] %>
                 <%= image_tag(img[1], width: '100px') %>
               </div>
             <% end %>
           </div>
         </p>
         <p>
-          <%= f.label :rule %>
-          <%= f.collection_select(:rule_id, Rule.all, :id, :description, prompt: true) %>
-          <%= link_to t('.create_new_rule'), new_admin_rule_path, class: "btn btn-secondary" %>
+          <%= f.label :description %>
+          <%= f.text_field :description, placeholder: true, class: "form-control" %>
         </p>
+
+        <div class="form-group badge-rule">
+          <%= f.label :rule %>
+          <p>
+            <%= f.label :rule_name %>
+            <%= f.select(:rule_name, rule_type, prompt: true) %>
+          </p>
+          <p>
+            <fieldset disabled class="choose-level">
+              <label class="form-check-label text-muted" id="label-add-level">
+                <%= t('.level')%>
+              </label>
+              <%= f.collection_radio_buttons :rule_params, (1..5), :to_s, :to_s, class: "form-control" %>
+            </fieldset>
+          </p>
+          <p>
+            <fieldset disabled class="choose-category">
+              <label class="form-check-label text-muted" id="label-add-category">
+                <%= t('.category')%>
+              </label>
+              <%= f.collection_select(:rule_params, Category.all, :title, :title, prompt: true) %>
+            </fieldset>
+          </p>
+        </div>
         <div class="row">
           <div class="col col-md-6">
             <%= f.submit class: "btn btn-primary" %>

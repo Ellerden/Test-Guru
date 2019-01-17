@@ -6,19 +6,19 @@ class Badge < ApplicationRecord
     ['Every category', 'badges/every_category.png'],
     ['Ahead of time', 'badges/ahead_of_time.png'],
     ['Three in a row', 'badges/three_in_row.png']].freeze
+  RULES = ['whole_category', 'whole_level', 'first_try'].freeze
 
   has_many :user_badges, dependent: :delete_all
   has_many :users, through: :user_badges
-  belongs_to :rule
 
-  validates :name, :rule, presence: true, uniqueness: true
-  validates :name, :rule, presence: true, uniqueness: true
+  validates :name, :description, :rule_name, presence: true
+  validates :rule_name, uniqueness: { scope: :rule_params }
 
   before_save :set_default_image
 
   private
 
   def set_default_image
-    self.route ||= 'badges/default.png'
+    self.image_path ||= 'badges/default.png'
   end
 end

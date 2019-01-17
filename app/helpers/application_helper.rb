@@ -19,15 +19,4 @@ module ApplicationHelper
     name = object.class.to_s.downcase
     content_tag(:h1, object.persisted? ? t(".edit_#{name}") : t(".new_#{name}"))
   end
-
-  # def show_header_with_params(object)
-  #   name = object.class.to_s.downcase
-  #   content_tag(:h1, object.persisted? ? t(".edit_#{name}", title: object.title) : t('.new_#{name}'))
-  # end
-
-  #   def question_header(question)
-  #   content_tag(:h1, question.persisted? ? t('.edit_question', title: question.test.title) : t('.new_question', title: question.test.title))
-  # end
-
-
 end
