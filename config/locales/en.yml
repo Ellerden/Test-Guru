@@ -263,10 +263,9 @@ en:
         new_rule: "New awarding rule"
         edit_rule: "Edit awarding rule"
         back: "Back"
-
-  rules: 
-    whole_category: "All tests of the category"
-    whole_level: "All tests of the level"
+        name:
+          whole_category: "All tests of the category"
+          whole_level: "All tests of the level"
 
     nav:
       admin_panel_title: "Admin panel Test Meister"
@@ -325,7 +324,7 @@ en:
       success: "Question was successfully <a target=\"_blank\" href=\"%{url}\">saved</a>"
       fail: "Something went wrong while saving Gist"
 
-  user_badges:
+  badges:
     index:
       header: "All earned badges"
       left_badges: "Badges yet to earn"

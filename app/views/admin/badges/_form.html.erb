@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col col-md-6">
-    <%= badges_header(@badge) %>
+    <%= show_header(@badge) %>
     <%= render 'shared/errors', resource: @badge %>
 
     <%= form_with(model: [:admin, @badge], local: true) do |f| %>

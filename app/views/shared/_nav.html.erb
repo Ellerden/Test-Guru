@@ -7,7 +7,7 @@
     <% if user_signed_in? %>
       <%= t('.welcome') %> <b><%= current_user.first_name %></b>!
       <%= link_to t('.profile'), profile_path %>
-      <%= link_to t('.badges'), user_badges_path %>
+      <%= link_to t('.badges'), badges_path %>
       <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to t('.login'), new_user_session_path %>

@@ -1,20 +1,20 @@
 <div class="container">
   <div class="col col-md-6">
-    <%= rule_header(@rule) %>
+    <%= show_header(@rule) %>
     <%= render 'shared/errors', resource: @rule %>
 
     <%= form_with(model: [:admin, @rule], local: true) do |f| %>
       <div class="form-group badge-rule">
         <p>
           <%= f.label :name %>
-          <%= f.select(:name, options_for_select(Rule::RULES), prompt: true) %>
+          <%= f.select(:name, rule_type, prompt: true) %>
         </p>
         <p>
           <fieldset disabled class="choose-level">
             <label class="form-check-label text-muted" id="label-add-level">
               <%= t('.level')%>
             </label>
-            <%= f.collection_radio_buttons :params, (1..5).map{ |n| [n, n] }, :first, :last, class: "form-control" %>
+            <%= f.collection_radio_buttons :params, (1..5), :to_s, :to_s, class: "form-control" %>
           </fieldset>
         </p>
         <p>

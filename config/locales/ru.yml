@@ -50,6 +50,7 @@ ru:
         email: 'Ваш email'
         body: 'Сообщение'
 
+
     placeholder: 
       test:
         title: "Введите название теста"
@@ -276,10 +277,9 @@ ru:
         new_rule: "Новое правило вручения"
         edit_rule: "Редактировать правило вручения"
         back: "Назад"
-
-  rules: 
-    whole_category: "Все тесты категории"
-    whole_level: "Все тесты уровня"
+        name:
+          whole_category: 'Все тесты категории'
+          whole_level: 'Все тесты уровня'
 
   tests:
     index:
@@ -331,7 +331,7 @@ ru:
       success: "Вопрос успешно <a href=\"%{url}\" target=\"_blank\">отправлен</a> в Gist"
       fail: "Во время отправки вопроса в Gist произошла ошибка"
 
-  user_badges:
+  badges:
     index:
       header: "Все ваши награды"
       left_badges: "Еще предстоит получить"

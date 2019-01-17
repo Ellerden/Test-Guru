@@ -23,12 +23,12 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { scope: :level }
 
 # Использовать тут скоуп by_category?
-  def self.by_category_title(category)
-     self.by_category.order(title: :desc).pluck(:title)
-  end
+  # def self.by_category_title(category)
+  #    self.by_category.order(title: :desc).pluck(:title)
+  # end
 
   def self.by_category(category)
-    Test.joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
+    joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
   end
 
   def self.by_level(level)

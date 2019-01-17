@@ -18,17 +18,20 @@ class User < ApplicationRecord
 
   # counts not only successfully passed tests but all. failed tests ilimination is in badges_reward_service
   def test_passed_by_level(level)
-    Test.joins(:participations).where(tests: { level: level }).where(participations: { user_id: self.id })
+    tests.where(level: level)
+    #Test.joins(:participations).where(tests: { level: level }).where(participations: { user_id: self.id })
   end
 
   # counts not only successfully passed tests but all. failed tests ilimination is in badges_reward_service
   def test_passed_by_category(category)
-    Test.joins(:participations, :category).where(categories: { title: category }).where(participations: { user_id: self.id })
+    tests.where(category: category)
+  #  Test.joins(:participations, :category).where(categories: { title: category }).where(participations: { user_id: self.id })
   end
 
   # counts not only successfully passed tests but all. failed tests ilimination is in badges_reward_service
   def passed_test(test_id)
-    Participation.where(user_id: self.id, test_id: test_id)
+    participations.where(test: test_id)
+    #Participation.where(user_id: self.id, test_id: test_id)
   end
 
   def participation(test)

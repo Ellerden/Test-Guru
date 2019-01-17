@@ -14,11 +14,11 @@ class Badge < ApplicationRecord
   validates :name, :rule, presence: true, uniqueness: true
   validates :name, :rule, presence: true, uniqueness: true
 
-  before_save :default_image
+  before_save :set_default_image
 
   private
 
-  def default_image
+  def set_default_image
     self.route ||= 'badges/default.png'
   end
 end

@@ -5,7 +5,7 @@
 
     <%= t('.welcome') %> <b><%= current_user.full_name %></b>!
     <%= link_to t('.profile'), profile_path %>
-    <%= link_to t('.badges'), user_badges_path %>
+    <%= link_to t('.badges'), badges_path %>
     <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
   </span> 
 </nav>

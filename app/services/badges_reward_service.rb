@@ -1,24 +1,15 @@
 class BadgesRewardService
-  attr_reader :rewarded
-
   def initialize(participation)
     @participation = participation
     @user = @participation.user
-    @rewarded = false
-  end
-
-  def achieve_badge(badge)
-    @participation.user.badges << badge
-    @rewarded = true
   end
 
   def call
-    if @participation.success?
-      Badge.all.each do |badge|
-        achieve_badge(badge) if send("passed_#{badge.rule.name}_rule?", badge.rule.params)
-      end
-    end
+    return unless @participation.success?
+    Badge.select{ |badge| send("passed_#{badge.rule.name}_rule?", badge.rule.params)}
   end
+
+  private
 
   def passed_first_try_rule?(_rule)
     @user.passed_test(@participation.test_id).count == 1

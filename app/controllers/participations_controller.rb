@@ -2,8 +2,7 @@
 
 class ParticipationsController < ApplicationController
   before_action :find_participation, only: %i[show update result gist]
-  before_action :set_test, only: %i[show update result check_time]
-  before_action :check_time, only: :update
+  before_action :set_test, only: %i[show update result]
 
   def show
   end
@@ -30,20 +29,18 @@ class ParticipationsController < ApplicationController
   def update
     @participation.accept!(params[:answer_ids])
     if @participation.completed?
-      awards = BadgesRewardService.new(@participation)
-      awards.call
-      flash[:notice] = t('.new_awards', url: user_badges_url) if awards.rewarded
+      awards = BadgesRewardService.new(@participation).call
+
+      if awards.present?
+        current_user.badges << awards
+        flash[:notice] = t('.new_awards', url: badges_url)
+      end
 
       TestsMailer.completed_test(@participation).deliver_now
       redirect_to result_participation_path(@participation)
     else
       render :show
     end
-  end
-
-  # здесь нужно снова рендерить update вместо redirect_to
-  def check_time
-    redirect_to result_participation_path(@participation), alert: t('.no_time_left') unless @participation.time_left? || !@participation.test.time_to_pass.present?
   end
 
   private
