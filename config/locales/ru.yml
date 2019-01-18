@@ -218,6 +218,8 @@ ru:
       admin_panel_title: "Панель администратора Test Meister"
       welcome: "Добро пожаловать"
       logout: "Выйти"
+      profile: "Профиль"
+      badges: "Награды"
 
     gists:
       index:
@@ -268,7 +270,6 @@ ru:
       level: "Уровень"
       questions_number: "Кол-во вопросов"
       time: "Время прохождения"
-      seconds: "с."
     test:
       category: "Категория"
       level: "Уровень"
@@ -304,6 +305,7 @@ ru:
       no_time_left: "Время для прохождения теста истекло"
     update:
       no_time_left: "Время для прохождения теста истекло"
+      new_awards: "Ура, вы заработали <a href=\"%{url}\" target=\"_blank\">награду!</a>"
     gist:
       success: "Вопрос успешно <a href=\"%{url}\" target=\"_blank\">отправлен</a> в Gist"
       fail: "Во время отправки вопроса в Gist произошла ошибка"

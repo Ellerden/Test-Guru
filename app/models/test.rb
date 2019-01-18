@@ -22,4 +22,8 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true,
                                     greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
+
+  def time_hours_minutes
+    Time.at(self.time_to_pass).utc.strftime("%H:%M")
+  end
 end
