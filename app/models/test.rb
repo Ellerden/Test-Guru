@@ -16,13 +16,10 @@ class Test < ApplicationRecord
                         joins(:category)
                           .where(categories: { title: category })
                       }
+  scope :by_level, ->(level) { where level: level }
 
   validates :title, :level, :category, :author, presence: true
   validates :level, numericality: { only_integer: true,
                                     greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
-
-  def self.by_level(level)
-    Test.where('level = ?', level)
-  end
 end
