@@ -5,11 +5,9 @@ class TestsController < ApplicationController
   before_action :set_questions, only: %i[start]
   before_action :set_tests, only: %i[index table]
 
-  def index
-  end
+  def index; end
 
-  def table
-  end
+  def table; end
 
   def start
     current_user.tests.push(@test)

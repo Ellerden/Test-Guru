@@ -16,7 +16,7 @@ class Participation < ApplicationRecord
   def accept!(answer_ids)
     # чтобы нельзя было продолжать слать ответы после того как время вышло
     # принимаем последний выбранный ответ и переводим тест в completed
-    unless self.completed?
+    unless completed?
       self.correct_questions += 1 if correct_answer?(answer_ids)
       self.current_question = next_question
       save!

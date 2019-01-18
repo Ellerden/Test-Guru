@@ -12,10 +12,10 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :by_category_name, ->(category) {
-                        joins(:category)
-                          .where(categories: { title: category })
-                      }
+  scope :by_category_name, lambda { |category|
+                             joins(:category)
+                               .where(categories: { title: category })
+                           }
   scope :by_level, ->(level) { where level: level }
 
   validates :title, :level, :category, :author, presence: true
@@ -24,6 +24,6 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { scope: :level }
 
   def time_hours_minutes
-    Time.at(self.time_to_pass).utc.strftime("%H:%M")
+    Time.at(time_to_pass).utc.strftime('%H:%M')
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GistQuestionService
   ResultGist = Struct.new(:success?, :gist_hash, :gist_url)
 

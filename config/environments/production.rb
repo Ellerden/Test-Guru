@@ -4,7 +4,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.assets.compile = true
-  #config.assets.initialize_on_precompile = false
+  # config.assets.initialize_on_precompile = false
 
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'test-meister.herokuapp.com' }
@@ -15,7 +15,8 @@ Rails.application.configure do
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
     authentication: 'plain',
-    enable_starttls_auto: true }
+    enable_starttls_auto: true
+  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true

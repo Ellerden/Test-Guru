@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  FLASH = { success: "success", error: "danger", alert: "warning", notice: "info" }.freeze
+  FLASH = { success: 'success', error: 'danger', alert: 'warning', notice: 'info' }.freeze
 
   def current_year
     Time.current.year

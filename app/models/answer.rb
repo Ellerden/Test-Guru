@@ -15,6 +15,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_answers_length
-    errors.add(:base, :max_answers) if self.maximum_capacity?
+    errors.add(:base, :max_answers) if maximum_capacity?
   end
 end

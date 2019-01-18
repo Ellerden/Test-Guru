@@ -4,16 +4,14 @@ class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[show edit update destroy]
 
- # /answers/id
-  def show
-  end
+  # /answers/id
+  def show; end
 
   def new
     @answer = @question.answers.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @answer = @question.answers.build(answer_params)

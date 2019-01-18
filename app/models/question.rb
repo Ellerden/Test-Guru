@@ -8,6 +8,6 @@ class Question < ApplicationRecord
   validates :text, presence: true
 
   def maximum_answers?
-    self.answers.size >= 4
+    answers.size >= 4
   end
 end

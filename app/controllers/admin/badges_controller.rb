@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::BadgesController < Admin::BaseController
   before_action :find_badge, only: %i[destroy show update edit]
 
@@ -5,15 +7,13 @@ class Admin::BadgesController < Admin::BaseController
     @badges = Badge.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @badge = Badge.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @badge = Badge.new(badge_params)

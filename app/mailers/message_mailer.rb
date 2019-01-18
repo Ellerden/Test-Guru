@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MessageMailer < ApplicationMailer
   def feedback(message)
     @author = message.author_name

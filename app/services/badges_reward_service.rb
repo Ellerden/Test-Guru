@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BadgesRewardService
   def initialize(participation)
     @participation = participation
@@ -6,6 +8,7 @@ class BadgesRewardService
 
   def call
     return unless @participation.success?
+
     Badge.select { |badge| send("passed_#{badge.rule_name}_rule?", badge.rule_params) }
   end
 
