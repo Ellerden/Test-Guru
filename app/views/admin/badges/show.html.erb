@@ -1,0 +1,9 @@
+<h2><%= t('.header') %></h2>
+<table class="table">
+  <tbody>
+    <%= render @badge%>
+  </tbody>
+</table>
+<div class="row">
+  <%= link_to t('.back'), admin_tests_path, class: "nav-link" %>
+</div>
