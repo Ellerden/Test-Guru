@@ -1,0 +1,52 @@
+<div class="container">
+
+  <% if @badges.present? %>
+    <div class="row"> 
+      <div class="col-12">
+        <h1><%= t('.header') %></h1>
+      </div>
+    </div>
+    
+    <div class="row">
+      <% @badges.each_slice(3) do |badges_group| %>
+        <% badges_group.each do |badge| %>
+          <div class="col-sm-4">
+            <div class="card test-card" >
+              <%= image_tag image_path(badge.image_path), class: "card-img-top" , id: 'badge_image' %>
+              <div class="card-body">
+                <h5 class="card-title"><%= badge.name %></h5>
+                <p class="card-text"><%= badge.description %></p>
+              </div>
+            </div>
+          </div>          
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @not_rewarded_badges.present? %>
+    <div class="wrapper disable">
+      <div class="row"> 
+        <div class="col-12">
+          <h1><%= t('.left_badges') %></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <% @not_rewarded_badges.each_slice(3) do |badges_group| %>
+          <% badges_group.each do |badge| %>
+            <div class="col-sm-4">
+              <div class="card test-card" >
+                <%= image_tag image_path(badge.image_path), class: "card-img-top" , id: 'badge_image' %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= badge.name %></h5>
+                  <p class="card-text"><%= badge.description %></p>
+                </div>
+              </div>
+            </div>          
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

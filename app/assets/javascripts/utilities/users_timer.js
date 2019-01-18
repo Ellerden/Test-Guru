@@ -15,9 +15,6 @@ document.addEventListener('turbolinks:load', function() {
     
     if (timePassed > timeToPass) {
       alert('There is no time left to finish the test :(');
-      // var button = document.getElementById('btnnext');
-      // button.click();
-      //return;
       form.submit();
     }
     secondsToHM(timeToPass - timePassed);

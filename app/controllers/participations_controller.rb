@@ -29,6 +29,16 @@ class ParticipationsController < ApplicationController
   def update
     @participation.accept!(params[:answer_ids])
     if @participation.completed?
+<<<<<<< HEAD
+=======
+      awards = BadgesRewardService.new(@participation).call
+
+      if awards.present?
+        current_user.badges << awards
+        flash[:notice] = t('.new_awards', url: badges_url)
+      end
+
+>>>>>>> badgestasks
       TestsMailer.completed_test(@participation).deliver_now
       redirect_to result_participation_path(@participation)
     else

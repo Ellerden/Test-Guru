@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'contact_us', to: 'messages#new'
   resources :messages, only: :create
+  resources :badges, only: :index
 
   resources :tests, only: :index do
     resources :questions, shallow: true, only: :show do
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges
     resources :gists, only: :index
 
     resources :tests do
